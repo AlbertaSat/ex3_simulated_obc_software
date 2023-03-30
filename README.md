@@ -3,6 +3,8 @@ Next generation linux based OBC software
 
 &nbsp;
 
+## Contributing
+
 ### Branch naming conventions: 
 The following branch naming conventions must be followed. Any PR not in compliance will be denied. The naming convention going is as follows:
 
