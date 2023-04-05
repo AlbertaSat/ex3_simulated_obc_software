@@ -1,0 +1,9 @@
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+title: "OBC Software Test"
+description: "just a test for Github Pages"
+remote_theme: "pages-themes/slate@v0.2.0"
