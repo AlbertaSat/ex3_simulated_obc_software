@@ -37,3 +37,6 @@ _site
 Gemfile.lock
 *.gem
 .jekyll-cache
+
+# For container bash history
+persistent/.bash_history 
