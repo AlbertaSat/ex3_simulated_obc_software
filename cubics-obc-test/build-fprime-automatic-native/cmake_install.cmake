@@ -52,6 +52,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/F-Prime/Drv/cmake_install.cmake")
   include("/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/F-Prime/CFDP/cmake_install.cmake")
   include("/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/F-Prime/Utils/cmake_install.cmake")
+  include("/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/Components/Burnwire/cmake_install.cmake")
 
 endif()
 

@@ -1,4 +1,5 @@
 # Hashes of file build rules.
+80285570bfcee51527ee135f55bfd35a ../Components/Burnwire/BurnwireComponentImpl.hpp-template
 3566cf2a94f599bf754927e1dd6e41dc ../fprime/Autocoders/Python/src/fprime_ac/generators/templates/arrays/array_cpp.py
 663d01f5bdd6abe9f6c2fdc27fa512c5 ../fprime/Autocoders/Python/src/fprime_ac/generators/templates/channels/ChannelBody.py
 41eb14ad614fee44fb3c96da51c53c58 ../fprime/Autocoders/Python/src/fprime_ac/generators/templates/commands/CommandBody.py
@@ -58,6 +59,9 @@ b0ff69661b25d11d06a64c86b9cb886a ../fprime/Svc/PrmDb/PrmDbComponentImpl.hpp-temp
 64d9f402038709db8115bd32a7f105f9 ../fprime/Svc/TlmChan/TlmChanComponentImpl.hpp-template
 b8353e3c2c4d9d222e87d8d327cd5544 ../fprime/Svc/TlmPacketizer/TlmPacketizerComponentImpl.hpp-template
 2a51a5e51bce290ffd58af8c05eeb264 CMakeFiles/version
+28e6b8b5b49cedca76218fb470829512 Components/Burnwire/BurnwireComponentAc.hpp
+c979f238af43e8d2c4bcc1028d680f06 Components/Burnwire/BurnwireComponentAi.xml
+31c3d64257058efc0fea12cbfc707e90 Components/Burnwire/CMakeFiles/Components_Burnwire_impl
 32e2023a53d7327d809f2a94ccb333b1 F-Prime/Autocoders/Python/src/fprime_ac/generators/templates/CMakeFiles/codegen
 9ee9e11b2b7e4e74e618559f713560c0 F-Prime/Drv/BlockDriver/BlockDriverComponentAc.hpp
 aa7389a1e5c653ddd3bb2d88ae0e07af F-Prime/Drv/BlockDriver/BlockDriverComponentAi.xml

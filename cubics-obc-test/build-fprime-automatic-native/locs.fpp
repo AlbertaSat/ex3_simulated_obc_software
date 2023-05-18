@@ -1,3 +1,4 @@
+locate component Components.Burnwire at "../Components/Burnwire/Burnwire.fpp"
 locate component Drv.BlockDriver at "../fprime/Drv/BlockDriver/BlockDriver.fpp"
 locate component Drv.ByteStreamDriverModel at "../fprime/Drv/ByteStreamDriverModel/ByteStreamDriverModel.fpp"
 locate component Drv.LinuxGpioDriver at "../fprime/Drv/LinuxGpioDriver/LinuxGpioDriver.fpp"

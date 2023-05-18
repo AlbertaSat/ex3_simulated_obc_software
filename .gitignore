@@ -41,3 +41,6 @@ Gemfile.lock
 # For container bash history
 persistent/.bash_history 
 
+cubics-obc-test/build*
+cubics-obc-test/venv*
+

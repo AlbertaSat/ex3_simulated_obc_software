@@ -1195,6 +1195,19 @@ Utils_Types/fast:
 	$(MAKE) $(MAKESILENT) -f F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/build.make F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/build
 .PHONY : Utils_Types/fast
 
+#=============================================================================
+# Target rules for targets named Components_Burnwire
+
+# Build rule for target.
+Components_Burnwire: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Components_Burnwire
+.PHONY : Components_Burnwire
+
+# fast build rule for target.
+Components_Burnwire/fast:
+	$(MAKE) $(MAKESILENT) -f Components/Burnwire/CMakeFiles/Components_Burnwire.dir/build.make Components/Burnwire/CMakeFiles/Components_Burnwire.dir/build
+.PHONY : Components_Burnwire/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1205,6 +1218,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... codegen"
 	@echo "... CFDP_Checksum"
+	@echo "... Components_Burnwire"
 	@echo "... Drv_BlockDriver"
 	@echo "... Drv_ByteStreamDriverModel"
 	@echo "... Drv_DataTypes"

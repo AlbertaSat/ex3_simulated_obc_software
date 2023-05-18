@@ -81,6 +81,7 @@ all: F-Prime/Os/all
 all: F-Prime/Drv/all
 all: F-Prime/CFDP/all
 all: F-Prime/Utils/all
+all: Components/Burnwire/all
 
 .PHONY : all
 
@@ -93,6 +94,7 @@ preinstall: F-Prime/Os/preinstall
 preinstall: F-Prime/Drv/preinstall
 preinstall: F-Prime/CFDP/preinstall
 preinstall: F-Prime/Utils/preinstall
+preinstall: Components/Burnwire/preinstall
 
 .PHONY : preinstall
 
@@ -107,8 +109,28 @@ clean: F-Prime/Os/clean
 clean: F-Prime/Drv/clean
 clean: F-Prime/CFDP/clean
 clean: F-Prime/Utils/clean
+clean: Components/Burnwire/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory Components/Burnwire
+
+# Recursive "all" directory target.
+Components/Burnwire/all: Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all
+
+.PHONY : Components/Burnwire/all
+
+# Recursive "preinstall" directory target.
+Components/Burnwire/preinstall:
+
+.PHONY : Components/Burnwire/preinstall
+
+# Recursive "clean" directory target.
+Components/Burnwire/clean: Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/clean
+Components/Burnwire/clean: Components/Burnwire/CMakeFiles/Components_Burnwire.dir/clean
+
+.PHONY : Components/Burnwire/clean
 
 #=============================================================================
 # Directory level rules for directory F-Prime/Autocoders
@@ -2246,7 +2268,7 @@ F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer_impl.dir/all: F-Prime/Fw/Types/CMakeFiles
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer_impl.dir/rule
@@ -2279,12 +2301,12 @@ F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Po
 F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/build.make F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/build.make F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=21 "Built target Fw_Buffer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=22 "Built target Fw_Buffer"
 .PHONY : F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Buffer/CMakeFiles/Fw_Buffer.dir/rule
@@ -2314,7 +2336,7 @@ F-Prime/Fw/Com/CMakeFiles/Fw_Com_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Ty
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Com/CMakeFiles/Fw_Com_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Com/CMakeFiles/Fw_Com_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Com/CMakeFiles/Fw_Com_impl.dir/rule
@@ -2342,12 +2364,12 @@ F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir
 F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/build.make F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/build.make F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=24 "Built target Fw_Com"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=25 "Built target Fw_Com"
 .PHONY : F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/rule
@@ -2380,7 +2402,7 @@ F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Ty
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd_impl.dir/rule
@@ -2411,12 +2433,12 @@ F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir
 F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/build.make F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/build.make F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=22,23 "Built target Fw_Cmd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=23,24 "Built target Fw_Cmd"
 .PHONY : F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/rule
@@ -2448,7 +2470,7 @@ F-Prime/Fw/Log/CMakeFiles/Fw_Log_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Ty
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Log/CMakeFiles/Fw_Log_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Log/CMakeFiles/Fw_Log_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Log/CMakeFiles/Fw_Log_impl.dir/rule
@@ -2478,12 +2500,12 @@ F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir
 F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/build.make F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/build.make F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=27,28 "Built target Fw_Log"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=28,29 "Built target Fw_Log"
 .PHONY : F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/rule
@@ -2534,7 +2556,7 @@ F-Prime/Fw/Logger/CMakeFiles/Fw_Logger.dir/all: F-Prime/Fw/Cfg/CMakeFiles/Fw_Cfg
 F-Prime/Fw/Logger/CMakeFiles/Fw_Logger.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Logger/CMakeFiles/Fw_Logger.dir/build.make F-Prime/Fw/Logger/CMakeFiles/Fw_Logger.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Logger/CMakeFiles/Fw_Logger.dir/build.make F-Prime/Fw/Logger/CMakeFiles/Fw_Logger.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=29 "Built target Fw_Logger"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Fw_Logger"
 .PHONY : F-Prime/Fw/Logger/CMakeFiles/Fw_Logger.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2568,7 +2590,7 @@ F-Prime/Fw/Time/CMakeFiles/Fw_Time_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Time/CMakeFiles/Fw_Time_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Time/CMakeFiles/Fw_Time_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Time/CMakeFiles/Fw_Time_impl.dir/rule
@@ -2595,12 +2617,12 @@ F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.d
 F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/build.make F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/build.make F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=34 "Built target Fw_Time"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=35 "Built target Fw_Time"
 .PHONY : F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/rule
@@ -2626,7 +2648,7 @@ F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm_impl.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Por
 F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm_impl.dir/build.make F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm_impl.dir/build.make F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=36 "Built target Fw_Tlm_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Fw_Tlm_impl"
 .PHONY : F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm_impl.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2660,12 +2682,12 @@ F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir
 F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/build.make F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/build.make F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=35 "Built target Fw_Tlm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=36 "Built target Fw_Tlm"
 .PHONY : F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/rule
@@ -2699,7 +2721,7 @@ F-Prime/Fw/Prm/CMakeFiles/Fw_Prm_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Ty
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Prm/CMakeFiles/Fw_Prm_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Prm/CMakeFiles/Fw_Prm_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Prm/CMakeFiles/Fw_Prm_impl.dir/rule
@@ -2731,12 +2753,12 @@ F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir
 F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/build.make F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/build.make F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=32 "Built target Fw_Prm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=33 "Built target Fw_Prm"
 .PHONY : F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/rule
@@ -2852,7 +2874,7 @@ F-Prime/Fw/Comp/CMakeFiles/Fw_CompQueued.dir/all: F-Prime/Utils/Hash/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Comp/CMakeFiles/Fw_CompQueued.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Comp/CMakeFiles/Fw_CompQueued.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Comp/CMakeFiles/Fw_CompQueued.dir/rule
@@ -2906,12 +2928,12 @@ F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.d
 F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/build.make F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/build.make F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=25 "Built target Fw_Comp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=26 "Built target Fw_Comp"
 .PHONY : F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/rule
@@ -2963,12 +2985,12 @@ F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/all: F-Prime/Fw/Cfg/CMakeFiles/Fw_Cfg.dir/a
 F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/build.make F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/build.make F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Fw_Obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=30 "Built target Fw_Obj"
 .PHONY : F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/rule
@@ -3021,12 +3043,12 @@ F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/all: F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir
 F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/build.make F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/build.make F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=30 "Built target Fw_Port"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=31 "Built target Fw_Port"
 .PHONY : F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/rule
@@ -3056,12 +3078,12 @@ F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/
 F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/build.make F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/build.make F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Fw_Ports_SuccessCondition_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=32 "Built target Fw_Ports_SuccessCondition_impl"
 .PHONY : F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition_impl.dir/rule
@@ -3094,7 +3116,7 @@ F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition.dir/all: 
 F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition.dir/build.make F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition.dir/build.make F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=31 "Built target Fw_Ports_SuccessCondition"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Fw_Ports_SuccessCondition"
 .PHONY : F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3121,12 +3143,12 @@ F-Prime/Fw/Ports/SuccessCondition/CMakeFiles/Fw_Ports_SuccessCondition.dir/clean
 F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/all: F-Prime/Fw/Cfg/CMakeFiles/Fw_Cfg.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/build.make F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/build.make F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=40 "Built target Fw_Types_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Fw_Types_impl"
 .PHONY : F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Types/CMakeFiles/Fw_Types_impl.dir/rule
@@ -3149,12 +3171,12 @@ F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all: config/CMakeFiles/config.dir/all
 F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all: F-Prime/Fw/Cfg/CMakeFiles/Fw_Cfg.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/build.make F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/build.make F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=37,38,39 "Built target Fw_Types"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=37,38,39,40 "Built target Fw_Types"
 .PHONY : F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/rule
@@ -3216,12 +3238,12 @@ F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/all: F-Prime/Fw/Types/CMakeFi
 F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/all: F-Prime/CFDP/Checksum/CMakeFiles/CFDP_Checksum.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/build.make F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/build.make F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=26 "Built target Fw_FilePacket"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=27 "Built target Fw_FilePacket"
 .PHONY : F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/FilePacket/CMakeFiles/Fw_FilePacket.dir/rule
@@ -3272,7 +3294,7 @@ F-Prime/Fw/SerializableFile/CMakeFiles/Fw_SerializableFile.dir/all: F-Prime/Fw/C
 F-Prime/Fw/SerializableFile/CMakeFiles/Fw_SerializableFile.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/SerializableFile/CMakeFiles/Fw_SerializableFile.dir/build.make F-Prime/Fw/SerializableFile/CMakeFiles/Fw_SerializableFile.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/SerializableFile/CMakeFiles/Fw_SerializableFile.dir/build.make F-Prime/Fw/SerializableFile/CMakeFiles/Fw_SerializableFile.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=33 "Built target Fw_SerializableFile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Fw_SerializableFile"
 .PHONY : F-Prime/Fw/SerializableFile/CMakeFiles/Fw_SerializableFile.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3328,12 +3350,12 @@ F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/all: F-Prime/Fw/Cfg/CMakeFiles/Fw_Cfg.dir
 F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/build.make F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/build.make F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Fw_Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=34 "Built target Fw_Test"
 .PHONY : F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Fw/Test/CMakeFiles/Fw_Test.dir/rule
@@ -3368,7 +3390,7 @@ F-Prime/Svc/Cycle/CMakeFiles/Svc_Cycle_impl.dir/all: F-Prime/Fw/Types/CMakeFiles
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Cycle/CMakeFiles/Svc_Cycle_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Cycle/CMakeFiles/Svc_Cycle_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Cycle/CMakeFiles/Svc_Cycle_impl.dir/rule
@@ -3408,7 +3430,7 @@ F-Prime/Svc/Cycle/CMakeFiles/Svc_Cycle.dir/all: F-Prime/Utils/Hash/CMakeFiles/Ut
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Cycle/CMakeFiles/Svc_Cycle.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Cycle/CMakeFiles/Svc_Cycle.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Cycle/CMakeFiles/Svc_Cycle.dir/rule
@@ -3438,12 +3460,12 @@ F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/all: F-Prime/Fw/Port/CMakeFiles/
 F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/build.make F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/build.make F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_Fatal_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=68 "Built target Svc_Fatal_impl"
 .PHONY : F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal_impl.dir/rule
@@ -3481,7 +3503,7 @@ F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_T
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Fatal/CMakeFiles/Svc_Fatal.dir/rule
@@ -3511,12 +3533,12 @@ F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw
 F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/build.make F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/build.make F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_Ping_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=82 "Built target Svc_Ping_impl"
 .PHONY : F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Ping/CMakeFiles/Svc_Ping_impl.dir/rule
@@ -3554,7 +3576,7 @@ F-Prime/Svc/Ping/CMakeFiles/Svc_Ping.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Typ
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Ping/CMakeFiles/Svc_Ping.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Ping/CMakeFiles/Svc_Ping.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Ping/CMakeFiles/Svc_Ping.dir/rule
@@ -3589,7 +3611,7 @@ F-Prime/Svc/PolyIf/CMakeFiles/Svc_PolyIf_impl.dir/all: F-Prime/Fw/Types/CMakeFil
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/PolyIf/CMakeFiles/Svc_PolyIf_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/PolyIf/CMakeFiles/Svc_PolyIf_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/PolyIf/CMakeFiles/Svc_PolyIf_impl.dir/rule
@@ -3627,7 +3649,7 @@ F-Prime/Svc/PolyIf/CMakeFiles/Svc_PolyIf.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/PolyIf/CMakeFiles/Svc_PolyIf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/PolyIf/CMakeFiles/Svc_PolyIf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/PolyIf/CMakeFiles/Svc_PolyIf.dir/rule
@@ -3662,7 +3684,7 @@ F-Prime/Svc/Sched/CMakeFiles/Svc_Sched_impl.dir/all: F-Prime/Fw/Types/CMakeFiles
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Sched/CMakeFiles/Svc_Sched_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Sched/CMakeFiles/Svc_Sched_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Sched/CMakeFiles/Svc_Sched_impl.dir/rule
@@ -3700,7 +3722,7 @@ F-Prime/Svc/Sched/CMakeFiles/Svc_Sched.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_T
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Sched/CMakeFiles/Svc_Sched.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Sched/CMakeFiles/Svc_Sched.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Sched/CMakeFiles/Svc_Sched.dir/rule
@@ -3735,7 +3757,7 @@ F-Prime/Svc/Seq/CMakeFiles/Svc_Seq_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Seq/CMakeFiles/Svc_Seq_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Seq/CMakeFiles/Svc_Seq_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Seq/CMakeFiles/Svc_Seq_impl.dir/rule
@@ -3773,7 +3795,7 @@ F-Prime/Svc/Seq/CMakeFiles/Svc_Seq.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Seq/CMakeFiles/Svc_Seq.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Seq/CMakeFiles/Svc_Seq.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Seq/CMakeFiles/Svc_Seq.dir/rule
@@ -3808,7 +3830,7 @@ F-Prime/Svc/WatchDog/CMakeFiles/Svc_WatchDog_impl.dir/all: F-Prime/Fw/Types/CMak
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/WatchDog/CMakeFiles/Svc_WatchDog_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/WatchDog/CMakeFiles/Svc_WatchDog_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/WatchDog/CMakeFiles/Svc_WatchDog_impl.dir/rule
@@ -3846,7 +3868,7 @@ F-Prime/Svc/WatchDog/CMakeFiles/Svc_WatchDog.dir/all: F-Prime/Fw/Types/CMakeFile
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/WatchDog/CMakeFiles/Svc_WatchDog.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/WatchDog/CMakeFiles/Svc_WatchDog.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/WatchDog/CMakeFiles/Svc_WatchDog.dir/rule
@@ -3881,12 +3903,12 @@ F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/all: F-Prime/Svc/P
 F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/build.make F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/build.make F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=46 "Built target Svc_ActiveLogger_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_ActiveLogger_impl"
 .PHONY : F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger_impl.dir/rule
@@ -3926,12 +3948,12 @@ F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/all: F-Prime/Os/CMakeFi
 F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/build.make F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/build.make F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=45 "Built target Svc_ActiveLogger"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=46 "Built target Svc_ActiveLogger"
 .PHONY : F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ActiveLogger/CMakeFiles/Svc_ActiveLogger.dir/rule
@@ -3967,12 +3989,12 @@ F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/all: F-Prime
 F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/build.make F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/build.make F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=47 "Built target Svc_ActiveRateGroup_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_ActiveRateGroup_impl"
 .PHONY : F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup_impl.dir/rule
@@ -4013,12 +4035,12 @@ F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/all: F-Prime/Os/C
 F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/build.make F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/build.make F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_ActiveRateGroup"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=47 "Built target Svc_ActiveRateGroup"
 .PHONY : F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ActiveRateGroup/CMakeFiles/Svc_ActiveRateGroup.dir/rule
@@ -4050,12 +4072,12 @@ F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/all: F
 F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/build.make F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/build.make F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_AssertFatalAdapter_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=50 "Built target Svc_AssertFatalAdapter_impl"
 .PHONY : F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter_impl.dir/rule
@@ -4095,7 +4117,7 @@ F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter.dir/all: F-Prim
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/AssertFatalAdapter/CMakeFiles/Svc_AssertFatalAdapter.dir/rule
@@ -4130,12 +4152,12 @@ F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/all: F-P
 F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/build.make F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/build.make F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=51 "Built target Svc_BufferAccumulator_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_BufferAccumulator_impl"
 .PHONY : F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator_impl.dir/rule
@@ -4175,12 +4197,12 @@ F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/all: F-Prime/
 F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/build.make F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/build.make F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=50 "Built target Svc_BufferAccumulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=51 "Built target Svc_BufferAccumulator"
 .PHONY : F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/BufferAccumulator/CMakeFiles/Svc_BufferAccumulator.dir/rule
@@ -4220,7 +4242,7 @@ F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager_impl.dir/all: F-Prime/Os/
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager_impl.dir/rule
@@ -4259,12 +4281,12 @@ F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/all: F-Prime/Os/CMake
 F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/build.make F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/build.make F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=53 "Built target Svc_BufferManager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=54 "Built target Svc_BufferManager"
 .PHONY : F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/BufferManager/CMakeFiles/Svc_BufferManager.dir/rule
@@ -4300,12 +4322,12 @@ F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/all: F-Prime/Svc/S
 F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/build.make F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/build.make F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_BufferLogger_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=53 "Built target Svc_BufferLogger_impl"
 .PHONY : F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger_impl.dir/rule
@@ -4351,7 +4373,7 @@ F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger.dir/all: F-Prime/Utils/Hash
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/BufferLogger/CMakeFiles/Svc_BufferLogger.dir/rule
@@ -4384,7 +4406,7 @@ F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater_impl.dir/all: F-Prime/F
 F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater_impl.dir/build.make F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater_impl.dir/build.make F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=55 "Built target Svc_BufferRepeater_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_BufferRepeater_impl"
 .PHONY : F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater_impl.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4425,12 +4447,12 @@ F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/all: F-Prime/Fw/Por
 F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/build.make F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/build.make F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=54 "Built target Svc_BufferRepeater"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=55 "Built target Svc_BufferRepeater"
 .PHONY : F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/BufferRepeater/CMakeFiles/Svc_BufferRepeater.dir/rule
@@ -4469,7 +4491,7 @@ F-Prime/Svc/ComLogger/CMakeFiles/Svc_ComLogger_impl.dir/all: F-Prime/Os/CMakeFil
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ComLogger/CMakeFiles/Svc_ComLogger_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ComLogger/CMakeFiles/Svc_ComLogger_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ComLogger/CMakeFiles/Svc_ComLogger_impl.dir/rule
@@ -4513,7 +4535,7 @@ F-Prime/Svc/ComLogger/CMakeFiles/Svc_ComLogger.dir/all: F-Prime/Utils/Hash/CMake
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ComLogger/CMakeFiles/Svc_ComLogger.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ComLogger/CMakeFiles/Svc_ComLogger.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ComLogger/CMakeFiles/Svc_ComLogger.dir/rule
@@ -4549,7 +4571,7 @@ F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue_impl.dir/all: F-Prime/Svc/Sched/CMa
 F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue_impl.dir/build.make F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue_impl.dir/build.make F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=61 "Built target Svc_ComQueue_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_ComQueue_impl"
 .PHONY : F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue_impl.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4596,12 +4618,12 @@ F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/all: F-Prime/Utils/Hash/CMakeFi
 F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/all: F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/build.make F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/build.make F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=60 "Built target Svc_ComQueue"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=60,61 "Built target Svc_ComQueue"
 .PHONY : F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ComQueue/CMakeFiles/Svc_ComQueue.dir/rule
@@ -4638,7 +4660,7 @@ F-Prime/Svc/ComSplitter/CMakeFiles/Svc_ComSplitter_impl.dir/all: F-Prime/Fw/Type
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ComSplitter/CMakeFiles/Svc_ComSplitter_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ComSplitter/CMakeFiles/Svc_ComSplitter_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ComSplitter/CMakeFiles/Svc_ComSplitter_impl.dir/rule
@@ -4678,7 +4700,7 @@ F-Prime/Svc/ComSplitter/CMakeFiles/Svc_ComSplitter.dir/all: F-Prime/Fw/Types/CMa
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ComSplitter/CMakeFiles/Svc_ComSplitter.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ComSplitter/CMakeFiles/Svc_ComSplitter.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ComSplitter/CMakeFiles/Svc_ComSplitter.dir/rule
@@ -4717,7 +4739,7 @@ F-Prime/Svc/ComStub/CMakeFiles/Svc_ComStub_impl.dir/all: F-Prime/Drv/ByteStreamD
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ComStub/CMakeFiles/Svc_ComStub_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ComStub/CMakeFiles/Svc_ComStub_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ComStub/CMakeFiles/Svc_ComStub_impl.dir/rule
@@ -4762,7 +4784,7 @@ F-Prime/Svc/ComStub/CMakeFiles/Svc_ComStub.dir/all: F-Prime/Utils/Hash/CMakeFile
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ComStub/CMakeFiles/Svc_ComStub.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ComStub/CMakeFiles/Svc_ComStub.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ComStub/CMakeFiles/Svc_ComStub.dir/rule
@@ -4796,12 +4818,12 @@ F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/all: F-Prime/Svc
 F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/build.make F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/build.make F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=56 "Built target Svc_CmdDispatcher_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_CmdDispatcher_impl"
 .PHONY : F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher_impl.dir/rule
@@ -4840,12 +4862,12 @@ F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/all: F-Prime/Os/CMake
 F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/build.make F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/build.make F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_CmdDispatcher"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=56 "Built target Svc_CmdDispatcher"
 .PHONY : F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/CmdDispatcher/CMakeFiles/Svc_CmdDispatcher.dir/rule
@@ -4886,7 +4908,7 @@ F-Prime/Svc/CmdSequencer/CMakeFiles/Svc_CmdSequencer_impl.dir/all: F-Prime/Os/CM
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/CmdSequencer/CMakeFiles/Svc_CmdSequencer_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/CmdSequencer/CMakeFiles/Svc_CmdSequencer_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/CmdSequencer/CMakeFiles/Svc_CmdSequencer_impl.dir/rule
@@ -4932,7 +4954,7 @@ F-Prime/Svc/CmdSequencer/CMakeFiles/Svc_CmdSequencer.dir/all: F-Prime/Utils/Hash
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/CmdSequencer/CMakeFiles/Svc_CmdSequencer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/CmdSequencer/CMakeFiles/Svc_CmdSequencer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/CmdSequencer/CMakeFiles/Svc_CmdSequencer.dir/rule
@@ -4972,7 +4994,7 @@ F-Prime/Svc/Deframer/CMakeFiles/Svc_Deframer_impl.dir/all: F-Prime/Drv/ByteStrea
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Deframer/CMakeFiles/Svc_Deframer_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Deframer/CMakeFiles/Svc_Deframer_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Deframer/CMakeFiles/Svc_Deframer_impl.dir/rule
@@ -5019,7 +5041,7 @@ F-Prime/Svc/Deframer/CMakeFiles/Svc_Deframer.dir/all: F-Prime/Utils/Types/CMakeF
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Deframer/CMakeFiles/Svc_Deframer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Deframer/CMakeFiles/Svc_Deframer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Deframer/CMakeFiles/Svc_Deframer.dir/rule
@@ -5057,7 +5079,7 @@ F-Prime/Svc/FatalHandler/CMakeFiles/Svc_FatalHandler_impl.dir/all: F-Prime/Svc/F
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FatalHandler/CMakeFiles/Svc_FatalHandler_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FatalHandler/CMakeFiles/Svc_FatalHandler_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FatalHandler/CMakeFiles/Svc_FatalHandler_impl.dir/rule
@@ -5100,7 +5122,7 @@ F-Prime/Svc/FatalHandler/CMakeFiles/Svc_FatalHandler.dir/all: F-Prime/Utils/Hash
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FatalHandler/CMakeFiles/Svc_FatalHandler.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FatalHandler/CMakeFiles/Svc_FatalHandler.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FatalHandler/CMakeFiles/Svc_FatalHandler.dir/rule
@@ -5130,7 +5152,7 @@ F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts_impl.dir/all: F-P
 F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts_impl.dir/build.make F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts_impl.dir/build.make F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=70 "Built target Svc_FileDownlinkPorts_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_FileDownlinkPorts_impl"
 .PHONY : F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts_impl.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5168,12 +5190,12 @@ F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/all: F-Prime/
 F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/build.make F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/build.make F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=69 "Built target Svc_FileDownlinkPorts"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=70 "Built target Svc_FileDownlinkPorts"
 .PHONY : F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FileDownlinkPorts/CMakeFiles/Svc_FileDownlinkPorts.dir/rule
@@ -5215,7 +5237,7 @@ F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink_impl.dir/all: F-Prime/Os/CM
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink_impl.dir/rule
@@ -5259,12 +5281,12 @@ F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/all: F-Prime/CFDP/Check
 F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/build.make F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/build.make F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=68 "Built target Svc_FileDownlink"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=69 "Built target Svc_FileDownlink"
 .PHONY : F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 28
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FileDownlink/CMakeFiles/Svc_FileDownlink.dir/rule
@@ -5303,7 +5325,7 @@ F-Prime/Svc/FileManager/CMakeFiles/Svc_FileManager_impl.dir/all: F-Prime/Os/CMak
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FileManager/CMakeFiles/Svc_FileManager_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FileManager/CMakeFiles/Svc_FileManager_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FileManager/CMakeFiles/Svc_FileManager_impl.dir/rule
@@ -5350,7 +5372,7 @@ F-Prime/Svc/FileManager/CMakeFiles/Svc_FileManager.dir/all: F-Prime/Utils/Hash/C
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FileManager/CMakeFiles/Svc_FileManager.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FileManager/CMakeFiles/Svc_FileManager.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FileManager/CMakeFiles/Svc_FileManager.dir/rule
@@ -5385,12 +5407,12 @@ F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/all: F-Prime/Svc/Ping/
 F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/build.make F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/build.make F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_FileUplink_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=73 "Built target Svc_FileUplink_impl"
 .PHONY : F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink_impl.dir/rule
@@ -5437,7 +5459,7 @@ F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink.dir/all: F-Prime/Utils/Hash/CMa
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/FileUplink/CMakeFiles/Svc_FileUplink.dir/rule
@@ -5476,7 +5498,7 @@ F-Prime/Svc/GenericHub/CMakeFiles/Svc_GenericHub_impl.dir/all: F-Prime/Os/CMakeF
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/GenericHub/CMakeFiles/Svc_GenericHub_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/GenericHub/CMakeFiles/Svc_GenericHub_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/GenericHub/CMakeFiles/Svc_GenericHub_impl.dir/rule
@@ -5519,7 +5541,7 @@ F-Prime/Svc/GenericHub/CMakeFiles/Svc_GenericHub.dir/all: F-Prime/Utils/Hash/CMa
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/GenericHub/CMakeFiles/Svc_GenericHub.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/GenericHub/CMakeFiles/Svc_GenericHub.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/GenericHub/CMakeFiles/Svc_GenericHub.dir/rule
@@ -5559,7 +5581,7 @@ F-Prime/Svc/GroundInterface/CMakeFiles/Svc_GroundInterface_impl.dir/all: F-Prime
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/GroundInterface/CMakeFiles/Svc_GroundInterface_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/GroundInterface/CMakeFiles/Svc_GroundInterface_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/GroundInterface/CMakeFiles/Svc_GroundInterface_impl.dir/rule
@@ -5604,7 +5626,7 @@ F-Prime/Svc/GroundInterface/CMakeFiles/Svc_GroundInterface.dir/all: F-Prime/Util
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/GroundInterface/CMakeFiles/Svc_GroundInterface.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/GroundInterface/CMakeFiles/Svc_GroundInterface.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/GroundInterface/CMakeFiles/Svc_GroundInterface.dir/rule
@@ -5640,12 +5662,12 @@ F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/all: F-Prime/Os/CMakeFiles/Os.
 F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/all: F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/build.make F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/build.make F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_Framer_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=74 "Built target Svc_Framer_impl"
 .PHONY : F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Framer/CMakeFiles/Svc_Framer_impl.dir/rule
@@ -5687,12 +5709,12 @@ F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/all: F-Prime/Utils/Hash/CMakeFiles/
 F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/all: F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/build.make F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/build.make F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=73 "Built target Svc_Framer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_Framer"
 .PHONY : F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Framer/CMakeFiles/Svc_Framer.dir/rule
@@ -5755,7 +5777,7 @@ F-Prime/Svc/FramingProtocol/CMakeFiles/Svc_FramingProtocol.dir/all: F-Prime/Util
 F-Prime/Svc/FramingProtocol/CMakeFiles/Svc_FramingProtocol.dir/all: F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FramingProtocol/CMakeFiles/Svc_FramingProtocol.dir/build.make F-Prime/Svc/FramingProtocol/CMakeFiles/Svc_FramingProtocol.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/FramingProtocol/CMakeFiles/Svc_FramingProtocol.dir/build.make F-Prime/Svc/FramingProtocol/CMakeFiles/Svc_FramingProtocol.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=74 "Built target Svc_FramingProtocol"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_FramingProtocol"
 .PHONY : F-Prime/Svc/FramingProtocol/CMakeFiles/Svc_FramingProtocol.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5801,7 +5823,7 @@ F-Prime/Svc/Health/CMakeFiles/Svc_Health_impl.dir/all: F-Prime/Os/CMakeFiles/Os.
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Health/CMakeFiles/Svc_Health_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Health/CMakeFiles/Svc_Health_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Health/CMakeFiles/Svc_Health_impl.dir/rule
@@ -5847,7 +5869,7 @@ F-Prime/Svc/Health/CMakeFiles/Svc_Health.dir/all: F-Prime/Utils/Hash/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Health/CMakeFiles/Svc_Health.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Health/CMakeFiles/Svc_Health.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Health/CMakeFiles/Svc_Health.dir/rule
@@ -5886,7 +5908,7 @@ F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb_impl.dir/all: F-Prime/Os/CMakeFiles/Os.
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb_impl.dir/rule
@@ -5924,12 +5946,12 @@ F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/all: F-Prime/Os/CMakeFiles/Os.dir/a
 F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/build.make F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/build.make F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=82 "Built target Svc_PolyDb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_PolyDb"
 .PHONY : F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/PolyDb/CMakeFiles/Svc_PolyDb.dir/rule
@@ -5968,7 +5990,7 @@ F-Prime/Svc/PrmDb/CMakeFiles/Svc_PrmDb_impl.dir/all: F-Prime/Os/CMakeFiles/Os.di
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/PrmDb/CMakeFiles/Svc_PrmDb_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/PrmDb/CMakeFiles/Svc_PrmDb_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/PrmDb/CMakeFiles/Svc_PrmDb_impl.dir/rule
@@ -6012,7 +6034,7 @@ F-Prime/Svc/PrmDb/CMakeFiles/Svc_PrmDb.dir/all: F-Prime/Utils/Hash/CMakeFiles/Ut
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/PrmDb/CMakeFiles/Svc_PrmDb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/PrmDb/CMakeFiles/Svc_PrmDb.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/PrmDb/CMakeFiles/Svc_PrmDb.dir/rule
@@ -6050,7 +6072,7 @@ F-Prime/Svc/RateGroupDriver/CMakeFiles/Svc_RateGroupDriver_impl.dir/all: F-Prime
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/RateGroupDriver/CMakeFiles/Svc_RateGroupDriver_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/RateGroupDriver/CMakeFiles/Svc_RateGroupDriver_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/RateGroupDriver/CMakeFiles/Svc_RateGroupDriver_impl.dir/rule
@@ -6093,7 +6115,7 @@ F-Prime/Svc/RateGroupDriver/CMakeFiles/Svc_RateGroupDriver.dir/all: F-Prime/Util
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/RateGroupDriver/CMakeFiles/Svc_RateGroupDriver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/RateGroupDriver/CMakeFiles/Svc_RateGroupDriver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/RateGroupDriver/CMakeFiles/Svc_RateGroupDriver.dir/rule
@@ -6132,7 +6154,7 @@ F-Prime/Svc/StaticMemory/CMakeFiles/Svc_StaticMemory_impl.dir/all: F-Prime/Os/CM
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/StaticMemory/CMakeFiles/Svc_StaticMemory_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/StaticMemory/CMakeFiles/Svc_StaticMemory_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/StaticMemory/CMakeFiles/Svc_StaticMemory_impl.dir/rule
@@ -6175,7 +6197,7 @@ F-Prime/Svc/StaticMemory/CMakeFiles/Svc_StaticMemory.dir/all: F-Prime/Utils/Hash
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/StaticMemory/CMakeFiles/Svc_StaticMemory.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/StaticMemory/CMakeFiles/Svc_StaticMemory.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/StaticMemory/CMakeFiles/Svc_StaticMemory.dir/rule
@@ -6212,7 +6234,7 @@ F-Prime/Svc/Time/CMakeFiles/Svc_Time_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/F
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Time/CMakeFiles/Svc_Time_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Time/CMakeFiles/Svc_Time_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Time/CMakeFiles/Svc_Time_impl.dir/rule
@@ -6252,7 +6274,7 @@ F-Prime/Svc/Time/CMakeFiles/Svc_Time.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Typ
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/Time/CMakeFiles/Svc_Time.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/Time/CMakeFiles/Svc_Time.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/Time/CMakeFiles/Svc_Time.dir/rule
@@ -6287,12 +6309,12 @@ F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/all: F-Prime/Svc/Sched/CMake
 F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/build.make F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/build.make F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=93 "Built target Svc_TlmChan_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_TlmChan_impl"
 .PHONY : F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan_impl.dir/rule
@@ -6332,12 +6354,12 @@ F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/all: F-Prime/Os/CMakeFiles/Os.dir
 F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/build.make F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/build.make F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_TlmChan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=93 "Built target Svc_TlmChan"
 .PHONY : F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/TlmChan/CMakeFiles/Svc_TlmChan.dir/rule
@@ -6372,12 +6394,12 @@ F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/all: F-Prime/Svc
 F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/build.make F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/build.make F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=94 "Built target Svc_TlmPacketizer_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_TlmPacketizer_impl"
 .PHONY : F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer_impl.dir/rule
@@ -6417,12 +6439,12 @@ F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/all: F-Prime/Os/CMake
 F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/build.make F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/build.make F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_TlmPacketizer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=94 "Built target Svc_TlmPacketizer"
 .PHONY : F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/TlmPacketizer/CMakeFiles/Svc_TlmPacketizer.dir/rule
@@ -6461,7 +6483,7 @@ F-Prime/Svc/SystemResources/CMakeFiles/Svc_SystemResources_impl.dir/all: F-Prime
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/SystemResources/CMakeFiles/Svc_SystemResources_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/SystemResources/CMakeFiles/Svc_SystemResources_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/SystemResources/CMakeFiles/Svc_SystemResources_impl.dir/rule
@@ -6505,7 +6527,7 @@ F-Prime/Svc/SystemResources/CMakeFiles/Svc_SystemResources.dir/all: F-Prime/Util
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/SystemResources/CMakeFiles/Svc_SystemResources.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/SystemResources/CMakeFiles/Svc_SystemResources.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/SystemResources/CMakeFiles/Svc_SystemResources.dir/rule
@@ -6542,7 +6564,7 @@ F-Prime/Svc/PassiveConsoleTextLogger/CMakeFiles/Svc_PassiveConsoleTextLogger_imp
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/PassiveConsoleTextLogger/CMakeFiles/Svc_PassiveConsoleTextLogger_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/PassiveConsoleTextLogger/CMakeFiles/Svc_PassiveConsoleTextLogger_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/PassiveConsoleTextLogger/CMakeFiles/Svc_PassiveConsoleTextLogger_impl.dir/rule
@@ -6582,7 +6604,7 @@ F-Prime/Svc/PassiveConsoleTextLogger/CMakeFiles/Svc_PassiveConsoleTextLogger.dir
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/PassiveConsoleTextLogger/CMakeFiles/Svc_PassiveConsoleTextLogger.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/PassiveConsoleTextLogger/CMakeFiles/Svc_PassiveConsoleTextLogger.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/PassiveConsoleTextLogger/CMakeFiles/Svc_PassiveConsoleTextLogger.dir/rule
@@ -6620,7 +6642,7 @@ F-Prime/Svc/ActiveTextLogger/CMakeFiles/Svc_ActiveTextLogger_impl.dir/all: F-Pri
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ActiveTextLogger/CMakeFiles/Svc_ActiveTextLogger_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ActiveTextLogger/CMakeFiles/Svc_ActiveTextLogger_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ActiveTextLogger/CMakeFiles/Svc_ActiveTextLogger_impl.dir/rule
@@ -6663,7 +6685,7 @@ F-Prime/Svc/ActiveTextLogger/CMakeFiles/Svc_ActiveTextLogger.dir/all: F-Prime/Ut
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/ActiveTextLogger/CMakeFiles/Svc_ActiveTextLogger.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/ActiveTextLogger/CMakeFiles/Svc_ActiveTextLogger.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/ActiveTextLogger/CMakeFiles/Svc_ActiveTextLogger.dir/rule
@@ -6695,12 +6717,12 @@ F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/all: F-Prime/Fw/Port/CMa
 F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/build.make F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/build.make F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_LinuxTime_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=79 "Built target Svc_LinuxTime_impl"
 .PHONY : F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime_impl.dir/rule
@@ -6741,7 +6763,7 @@ F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime.dir/all: F-Prime/Svc/Time/CMakeFi
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/LinuxTime/CMakeFiles/Svc_LinuxTime.dir/rule
@@ -6779,7 +6801,7 @@ F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer_impl.dir/all: F-Prime/Svc/Cycle
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer_impl.dir/rule
@@ -6817,12 +6839,12 @@ F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/all: F-Prime/Os/CMakeFiles/
 F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/build.make F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/build.make F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=79 "Built target Svc_LinuxTimer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Svc_LinuxTimer"
 .PHONY : F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Svc/LinuxTimer/CMakeFiles/Svc_LinuxTimer.dir/rule
@@ -6875,12 +6897,12 @@ F-Prime/Os/CMakeFiles/Os.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 F-Prime/Os/CMakeFiles/Os.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Os/CMakeFiles/Os.dir/build.make F-Prime/Os/CMakeFiles/Os.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Os/CMakeFiles/Os.dir/build.make F-Prime/Os/CMakeFiles/Os.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=41,42,43,44 "Built target Os"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=41,42,43,44,45 "Built target Os"
 .PHONY : F-Prime/Os/CMakeFiles/Os.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Os/CMakeFiles/Os.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Os/CMakeFiles/Os.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Os/CMakeFiles/Os.dir/rule
@@ -6915,7 +6937,7 @@ F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes_impl.dir/all: F-Prime/Fw/Types/CM
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes_impl.dir/rule
@@ -6948,12 +6970,12 @@ F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/all: F-Prime/Fw/Port/CMakeFil
 F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/build.make F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/build.make F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=4 "Built target Drv_DataTypes"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=5 "Built target Drv_DataTypes"
 .PHONY : F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/DataTypes/CMakeFiles/Drv_DataTypes.dir/rule
@@ -6988,7 +7010,7 @@ F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts_impl.dir/all: F-Prime
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts_impl.dir/rule
@@ -7019,12 +7041,12 @@ F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/all: F-Prime/Fw/P
 F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/build.make F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/build.make F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=5 "Built target Drv_GpioDriverPorts"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=6 "Built target Drv_GpioDriverPorts"
 .PHONY : F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/rule
@@ -7055,12 +7077,12 @@ F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/all: F-Prime/F
 F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/build.make F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/build.make F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=13 "Built target Drv_SpiDriverPorts_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=14 "Built target Drv_SpiDriverPorts_impl"
 .PHONY : F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts_impl.dir/rule
@@ -7099,7 +7121,7 @@ F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts.dir/all: F-Prime/Fw/Typ
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts.dir/rule
@@ -7135,7 +7157,7 @@ F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts_impl.dir/all: F-Prime/F
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts_impl.dir/rule
@@ -7169,12 +7191,12 @@ F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/all: F-Prime/Fw/Por
 F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/build.make F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/build.make F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=6 "Built target Drv_I2cDriverPorts"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=7 "Built target Drv_I2cDriverPorts"
 .PHONY : F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/rule
@@ -7216,7 +7238,7 @@ F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver_impl.dir/all: F-Prime/Drv/Dat
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver_impl.dir/rule
@@ -7258,12 +7280,12 @@ F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/all: F-Prime/Drv/DataType
 F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/build.make F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/build.make F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=1 "Built target Drv_BlockDriver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=2 "Built target Drv_BlockDriver"
 .PHONY : F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/BlockDriver/CMakeFiles/Drv_BlockDriver.dir/rule
@@ -7302,7 +7324,7 @@ F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel_impl.dir/
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel_impl.dir/rule
@@ -7340,12 +7362,12 @@ F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/all: 
 F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/build.make F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/build.make F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=2,3 "Built target Drv_ByteStreamDriverModel"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=3,4 "Built target Drv_ByteStreamDriverModel"
 .PHONY : F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/rule
@@ -7379,12 +7401,12 @@ F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/all: F-Prime
 F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/all: F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/build.make F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/build.make F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=9 "Built target Drv_LinuxGpioDriver_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Drv_LinuxGpioDriver_impl"
 .PHONY : F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver_impl.dir/rule
@@ -7423,12 +7445,12 @@ F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/all: F-Prime/Drv/
 F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/build.make F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/build.make F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=8 "Built target Drv_LinuxGpioDriver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=9 "Built target Drv_LinuxGpioDriver"
 .PHONY : F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/LinuxGpioDriver/CMakeFiles/Drv_LinuxGpioDriver.dir/rule
@@ -7462,12 +7484,12 @@ F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/all: F-Prime
 F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/all: F-Prime/Drv/ByteStreamDriverModel/CMakeFiles/Drv_ByteStreamDriverModel.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/build.make F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/build.make F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Drv_LinuxUartDriver_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=13 "Built target Drv_LinuxUartDriver_impl"
 .PHONY : F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver_impl.dir/rule
@@ -7506,12 +7528,12 @@ F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/all: F-Prime/Drv/
 F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/build.make F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/build.make F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=12 "Built target Drv_LinuxUartDriver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Drv_LinuxUartDriver"
 .PHONY : F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/LinuxUartDriver/CMakeFiles/Drv_LinuxUartDriver.dir/rule
@@ -7544,12 +7566,12 @@ F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/all: F-Prime/F
 F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/all: F-Prime/Drv/SpiDriverPorts/CMakeFiles/Drv_SpiDriverPorts.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/build.make F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/build.make F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=11 "Built target Drv_LinuxSpiDriver_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=12 "Built target Drv_LinuxSpiDriver_impl"
 .PHONY : F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 19
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver_impl.dir/rule
@@ -7591,7 +7613,7 @@ F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver.dir/all: F-Prime/Drv/Sp
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 18
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/LinuxSpiDriver/CMakeFiles/Drv_LinuxSpiDriver.dir/rule
@@ -7625,12 +7647,12 @@ F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/all: F-Prime/O
 F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/all: F-Prime/Drv/I2cDriverPorts/CMakeFiles/Drv_I2cDriverPorts.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/build.make F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/build.make F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=10 "Built target Drv_LinuxI2cDriver_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=11 "Built target Drv_LinuxI2cDriver_impl"
 .PHONY : F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver_impl.dir/rule
@@ -7669,12 +7691,12 @@ F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/all: F-Prime/Drv/I2
 F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/build.make F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/build.make F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Drv_LinuxI2cDriver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=10 "Built target Drv_LinuxI2cDriver"
 .PHONY : F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/LinuxI2cDriver/CMakeFiles/Drv_LinuxI2cDriver.dir/rule
@@ -7737,12 +7759,12 @@ F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/build.make F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/build.make F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=7 "Built target Drv_Ip"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=8 "Built target Drv_Ip"
 .PHONY : F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/Ip/CMakeFiles/Drv_Ip.dir/rule
@@ -7781,7 +7803,7 @@ F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient_impl.dir/all: F-Prime/Os/CMakeFil
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient_impl.dir/rule
@@ -7821,12 +7843,12 @@ F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/all: F-Prime/Drv/Ip/CMakeFile
 F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/build.make F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/build.make F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=14,15 "Built target Drv_TcpClient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=15,16 "Built target Drv_TcpClient"
 .PHONY : F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/TcpClient/CMakeFiles/Drv_TcpClient.dir/rule
@@ -7860,12 +7882,12 @@ F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/all: F-Prime/Fw/Types/CM
 F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/build.make F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/build.make F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=18 "Built target Drv_TcpServer_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Drv_TcpServer_impl"
 .PHONY : F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer_impl.dir/rule
@@ -7905,12 +7927,12 @@ F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/all: F-Prime/Drv/Ip/CMakeFile
 F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/build.make F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/build.make F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=16,17 "Built target Drv_TcpServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=17,18 "Built target Drv_TcpServer"
 .PHONY : F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/TcpServer/CMakeFiles/Drv_TcpServer.dir/rule
@@ -7944,12 +7966,12 @@ F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_
 F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/build.make F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/depend
 	$(MAKE) $(MAKESILENT) -f F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/build.make F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Drv_Udp_impl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=21 "Built target Drv_Udp_impl"
 .PHONY : F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/all
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/Udp/CMakeFiles/Drv_Udp_impl.dir/rule
@@ -7994,7 +8016,7 @@ F-Prime/Drv/Udp/CMakeFiles/Drv_Udp.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_
 
 # Build rule for subdir invocation for target.
 F-Prime/Drv/Udp/CMakeFiles/Drv_Udp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 27
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Drv/Udp/CMakeFiles/Drv_Udp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Drv/Udp/CMakeFiles/Drv_Udp.dir/rule
@@ -8050,7 +8072,7 @@ F-Prime/CFDP/Checksum/CMakeFiles/CFDP_Checksum.dir/all: F-Prime/Fw/Types/CMakeFi
 
 # Build rule for subdir invocation for target.
 F-Prime/CFDP/Checksum/CMakeFiles/CFDP_Checksum.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/CFDP/Checksum/CMakeFiles/CFDP_Checksum.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/CFDP/Checksum/CMakeFiles/CFDP_Checksum.dir/rule
@@ -8112,7 +8134,7 @@ F-Prime/Utils/CMakeFiles/Utils.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash
 
 # Build rule for subdir invocation for target.
 F-Prime/Utils/CMakeFiles/Utils.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Utils/CMakeFiles/Utils.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Utils/CMakeFiles/Utils.dir/rule
@@ -8168,7 +8190,7 @@ F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw
 
 # Build rule for subdir invocation for target.
 F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/rule
@@ -8224,7 +8246,7 @@ F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/all: F-Prime/Fw/Types/CMakeFiles/
 
 # Build rule for subdir invocation for target.
 F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
 .PHONY : F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/rule
@@ -8238,6 +8260,87 @@ Utils_Types: F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/rule
 F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/clean:
 	$(MAKE) $(MAKESILENT) -f F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/build.make F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/clean
 .PHONY : F-Prime/Utils/Types/CMakeFiles/Utils_Types.dir/clean
+
+#=============================================================================
+# Target rules for target Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir
+
+# All Build rule for target.
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Autocoders/Python/src/fprime_ac/generators/templates/CMakeFiles/codegen.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Cfg/CMakeFiles/Fw_Cfg.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Comp/CMakeFiles/Fw_CompQueued.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
+	$(MAKE) $(MAKESILENT) -f Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/build.make Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/depend
+	$(MAKE) $(MAKESILENT) -f Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/build.make Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num= "Built target Components_Burnwire_impl"
+.PHONY : Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all
+
+# Build rule for subdir invocation for target.
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 23
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
+.PHONY : Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/rule
+
+# Convenience name for target.
+Components_Burnwire_impl: Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/rule
+
+.PHONY : Components_Burnwire_impl
+
+# clean rule for target.
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/build.make Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/clean
+.PHONY : Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/clean
+
+#=============================================================================
+# Target rules for target Components/Burnwire/CMakeFiles/Components_Burnwire.dir
+
+# All Build rule for target.
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Autocoders/Python/src/fprime_ac/generators/templates/CMakeFiles/codegen.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: config/CMakeFiles/config.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Com/CMakeFiles/Fw_Com.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Cmd/CMakeFiles/Fw_Cmd.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Log/CMakeFiles/Fw_Log.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Logger/CMakeFiles/Fw_Logger.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Time/CMakeFiles/Fw_Time.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Tlm/CMakeFiles/Fw_Tlm.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Prm/CMakeFiles/Fw_Prm.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Cfg/CMakeFiles/Fw_Cfg.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Comp/CMakeFiles/Fw_CompQueued.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Comp/CMakeFiles/Fw_Comp.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all
+	$(MAKE) $(MAKESILENT) -f Components/Burnwire/CMakeFiles/Components_Burnwire.dir/build.make Components/Burnwire/CMakeFiles/Components_Burnwire.dir/depend
+	$(MAKE) $(MAKESILENT) -f Components/Burnwire/CMakeFiles/Components_Burnwire.dir/build.make Components/Burnwire/CMakeFiles/Components_Burnwire.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles --progress-num=1 "Built target Components_Burnwire"
+.PHONY : Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all
+
+# Build rule for subdir invocation for target.
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 24
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-fprime-automatic-native/CMakeFiles 0
+.PHONY : Components/Burnwire/CMakeFiles/Components_Burnwire.dir/rule
+
+# Convenience name for target.
+Components_Burnwire: Components/Burnwire/CMakeFiles/Components_Burnwire.dir/rule
+
+.PHONY : Components_Burnwire
+
+# clean rule for target.
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Components/Burnwire/CMakeFiles/Components_Burnwire.dir/build.make Components/Burnwire/CMakeFiles/Components_Burnwire.dir/clean
+.PHONY : Components/Burnwire/CMakeFiles/Components_Burnwire.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

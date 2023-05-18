@@ -109,6 +109,9 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Enable/Disable output of compile commands during generation.
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
+//Install dir
+CMAKE_INSTALL_PREFIX:PATH=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-artifacts
+
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
 
@@ -399,7 +402,6 @@ CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test
-CMAKE_INSTALL_PREFIX:INTERNAL=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-artifacts
 //Original value of CMAKE_INSTALL_PREFIX from settings.ini
 CMAKE_INSTALL_PREFIX_INI_:INTERNAL=/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/build-artifacts
 //Install .so files without execute permission.
@@ -421,7 +423,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=94
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=95
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
