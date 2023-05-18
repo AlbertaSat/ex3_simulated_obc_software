@@ -40,3 +40,4 @@ Gemfile.lock
 
 # For container bash history
 persistent/.bash_history 
+

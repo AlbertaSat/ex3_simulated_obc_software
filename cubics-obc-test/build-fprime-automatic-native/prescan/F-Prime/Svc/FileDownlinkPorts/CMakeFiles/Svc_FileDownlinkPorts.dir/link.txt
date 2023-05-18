@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/Linux/libSvc_FileDownlinkPorts.a CMakeFiles/Svc_FileDownlinkPorts.dir/__/__/cmake/empty.cpp.o
+/usr/bin/ranlib ../../../lib/Linux/libSvc_FileDownlinkPorts.a

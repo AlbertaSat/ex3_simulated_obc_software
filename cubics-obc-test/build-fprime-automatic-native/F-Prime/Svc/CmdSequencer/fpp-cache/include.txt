@@ -1,0 +1,3 @@
+/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/CmdSequencer/Commands.fppi
+/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/CmdSequencer/Events.fppi
+/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/CmdSequencer/Telemetry.fppi
