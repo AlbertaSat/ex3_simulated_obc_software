@@ -1013,6 +1013,7 @@
     <channel component="fileUplink" name="PacketsReceived" id="0x901" description="The total number of packets received" type="U32"/>
     <channel component="fileUplink" name="Warnings" id="0x902" description="The total number of warnings issued" type="U32"/>
     <channel component="burnwire" name="BurnwireState" id="0xe00" description="Telemetry channel to report burnwire state" type="Fw::On"/>
+    <channel component="burnwire" name="BurnwireCounter" id="0xe04" description="Telemetry channel to report the time burnwire has been active since last activated" type="U32"/>
     <channel component="health" name="PingLateWarnings" id="0x2000" description="Number of overrun warnings" type="U32"/>
     <channel component="fileUplinkBufferManager" name="TotalBuffs" id="0x4400" description="The total buffers allocated" type="U32"/>
     <channel component="fileUplinkBufferManager" name="CurrBuffs" id="0x4401" description="The current number of allocated buffers" type="U32"/>

@@ -74,6 +74,7 @@
     </packet>
 
     <packet name="LedChannels" id="8" level="1">
+        <channel name="burnwire.BurnwireCounter"/>
         <channel name="burnwire.BurnwireState"/>
     </packet>
 

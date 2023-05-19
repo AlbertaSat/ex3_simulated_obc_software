@@ -1,1 +1,2 @@
+burnwire.BurnwireCounter
 burnwire.BurnwireState

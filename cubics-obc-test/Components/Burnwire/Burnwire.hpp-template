@@ -34,6 +34,21 @@ namespace Components {
     PRIVATE:
 
       // ----------------------------------------------------------------------
+      // Handler implementations for user-defined typed input ports
+      // ----------------------------------------------------------------------
+
+      //! Handler implementation for run
+      //!
+      void run_handler(
+          const NATIVE_INT_TYPE portNum, /*!< The port number*/
+          NATIVE_UINT_TYPE context /*!< 
+      The call order
+      */
+      );
+
+    PRIVATE:
+
+      // ----------------------------------------------------------------------
       // Command handler implementations
       // ----------------------------------------------------------------------
 

@@ -132,6 +132,9 @@ module BurnwireTester {
     connections BurnwireTester {
       # Add here connections to user-defined components
 
+      # Rate Group 1 (1Hz cycle) ouput is connected to burnwire's run input
+      rateGroup1.RateGroupMemberOut[3] -> burnwire.run
+
       # led's gpioSet output is connected to gpioDriver's gpioWrite input
       burnwire.gpioSet -> gpioDriver.gpioWrite
     }

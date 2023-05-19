@@ -144,12 +144,12 @@ bin/Linux/BurnwireTester: lib/Linux/libFw_Log.a
 bin/Linux/BurnwireTester: lib/Linux/libSvc_Time.a
 bin/Linux/BurnwireTester: lib/Linux/libSvc_TlmChan.a
 bin/Linux/BurnwireTester: lib/Linux/libFw_Tlm.a
+bin/Linux/BurnwireTester: lib/Linux/libSvc_Sched.a
 bin/Linux/BurnwireTester: lib/Linux/libFw_CompQueued.a
 bin/Linux/BurnwireTester: lib/Linux/libFw_Comp.a
 bin/Linux/BurnwireTester: lib/Linux/libOs.a
 bin/Linux/BurnwireTester: lib/Linux/libUtils_Hash.a
 bin/Linux/BurnwireTester: lib/Linux/libSvc_Ping.a
-bin/Linux/BurnwireTester: lib/Linux/libSvc_Sched.a
 bin/Linux/BurnwireTester: lib/Linux/libFw_Com.a
 bin/Linux/BurnwireTester: lib/Linux/libFw_Time.a
 bin/Linux/BurnwireTester: lib/Linux/libFw_Port.a

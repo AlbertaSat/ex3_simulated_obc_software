@@ -51,6 +51,7 @@
 #include <Fw/Prm/PrmSetPortAc.hpp>
 #include <Fw/Time/TimePortAc.hpp>
 #include <Fw/Tlm/TlmPortAc.hpp>
+#include <Svc/Sched/SchedPortAc.hpp>
 
 namespace Components {
 
@@ -80,6 +81,14 @@ namespace Components {
     //! \return cmdIn[portNum]
     //!
     Fw::InputCmdPort* get_cmdIn_InputPort(
+        NATIVE_INT_TYPE portNum /*!< The port number*/
+    );
+
+    //! Get input port at index
+    //!
+    //! \return run[portNum]
+    //!
+    Svc::InputSchedPort* get_run_InputPort(
         NATIVE_INT_TYPE portNum /*!< The port number*/
     );
 
@@ -269,6 +278,38 @@ namespace Components {
   PROTECTED:
 
     // ----------------------------------------------------------------------
+    // Handlers to implement for typed input ports
+    // ----------------------------------------------------------------------
+
+    //! Handler for input port run
+    //
+    virtual void run_handler(
+        NATIVE_INT_TYPE portNum, /*!< The port number*/
+        NATIVE_UINT_TYPE context /*!< 
+      The call order
+      */
+    ) = 0;
+
+  PROTECTED:
+
+    // ----------------------------------------------------------------------
+    // Port handler base-class functions for typed input ports.
+    // ----------------------------------------------------------------------
+    // Call these functions directly to bypass the corresponding ports.
+    // ----------------------------------------------------------------------
+
+    //! Handler base-class function for input port run
+    //!
+    void run_handlerBase(
+        NATIVE_INT_TYPE portNum, /*!< The port number*/
+        NATIVE_UINT_TYPE context /*!< 
+      The call order
+      */
+    );
+
+  PROTECTED:
+
+    // ----------------------------------------------------------------------
     // Invocation functions for typed output ports
     // ----------------------------------------------------------------------
 
@@ -291,6 +332,12 @@ namespace Components {
     //!
     NATIVE_INT_TYPE getNum_cmdIn_InputPorts();
 
+    //! Get the number of run input ports
+    //!
+    //! \return The number of run input ports
+    //!
+    NATIVE_INT_TYPE getNum_run_InputPorts();
+
 
     // ----------------------------------------------------------------------
     // Enumerations for number of ports
@@ -298,6 +345,7 @@ namespace Components {
 
     enum {
        NUM_CMDIN_INPUT_PORTS = 1,
+       NUM_RUN_INPUT_PORTS = 1,
     };
 
   PROTECTED:
@@ -556,6 +604,7 @@ namespace Components {
 
     enum {
       CHANNELID_BURNWIRESTATE = 0x0, //!< Channel ID for BurnwireState
+      CHANNELID_BURNWIRECOUNTER = 0x4, //!< Channel ID for BurnwireCounter
     };
 
   PROTECTED:
@@ -569,6 +618,14 @@ namespace Components {
     /* Telemetry channel to report burnwire state */
     void tlmWrite_BurnwireState(
         const Fw::On& arg /*!< The telemetry value*/,
+        Fw::Time _tlmTime=Fw::Time() /*!< Timestamp. Default: unspecified, request from getTime port*/
+    );
+
+    //! Write telemetry channel BurnwireCounter
+    //!
+    /* Telemetry channel to report the time burnwire has been active since last activated */
+    void tlmWrite_BurnwireCounter(
+        U32 arg /*!< The telemetry value*/,
         Fw::Time _tlmTime=Fw::Time() /*!< Timestamp. Default: unspecified, request from getTime port*/
     );
 
@@ -595,6 +652,10 @@ namespace Components {
     //! Input port cmdIn
     //!
     Fw::InputCmdPort m_cmdIn_InputPort[NUM_CMDIN_INPUT_PORTS];
+
+    //! Input port run
+    //!
+    Svc::InputSchedPort m_run_InputPort[NUM_RUN_INPUT_PORTS];
 
   PRIVATE:
 
@@ -659,6 +720,16 @@ namespace Components {
       */
         Fw::CmdArgBuffer &args /*!< 
       Buffer containing arguments
+      */
+    );
+
+    //! Callback for port run
+    //!
+    static void m_p_run_in(
+        Fw::PassiveComponentBase* callComp, /*!< The component instance*/
+        NATIVE_INT_TYPE portNum, /*!< The port number*/
+        NATIVE_UINT_TYPE context /*!< 
+      The call order
       */
     );
 

@@ -3,3 +3,12 @@ Registered client FSW_
 Registration complete waiting for message.
 Registered client GUI_
 Registration complete waiting for message.
+Ctrl-C received, server shutting down.
+shutdown from main thread
+socket timed out and shutdown is requested
+Quit received!
+read data from socket is empty!
+Header information is empty, client GUI_ exiting.
+Quit processed!
+Closed FSW_ connection.Closed GUI_ connection.
+

@@ -8,11 +8,16 @@ module Components {
         @ Telemetry channel to report burnwire state
         telemetry BurnwireState: Fw.On
 
+        @ Telemetry channel to report the time burnwire has been active since last activated
+        telemetry BurnwireCounter: U32 id 4
+
         @ Reports the state of the burnwire GPIO 
         event SetBurnwireState(state: Fw.On) \
             severity activity high \
             format "Set burnwire state to {}."
 
+        @ Port receiving calls from the rate group
+        sync input port run: Svc.Sched
         
         @ Port sending calls to the GPIO driver
         output port gpioSet: Drv.GpioWrite

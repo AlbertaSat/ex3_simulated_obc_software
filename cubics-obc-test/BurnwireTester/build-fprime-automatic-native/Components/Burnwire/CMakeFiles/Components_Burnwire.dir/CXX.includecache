@@ -349,6 +349,8 @@ Fw/Time/TimePortAc.hpp
 -
 Fw/Tlm/TlmPortAc.hpp
 -
+Svc/Sched/SchedPortAc.hpp
+-
 
 F-Prime/Drv/GpioDriverPorts/GpioWritePortAc.hpp
 cstdio
@@ -597,4 +599,22 @@ Fw/Types/Serializable.hpp
 F-Prime/Fw/Types/Fw/Types/Serializable.hpp
 Fw/Types/String.hpp
 F-Prime/Fw/Types/Fw/Types/String.hpp
+
+F-Prime/Svc/Sched/SchedPortAc.hpp
+cstdio
+-
+cstring
+-
+FpConfig.hpp
+F-Prime/Svc/Sched/FpConfig.hpp
+Fw/Comp/PassiveComponentBase.hpp
+F-Prime/Svc/Sched/Fw/Comp/PassiveComponentBase.hpp
+Fw/Port/InputPortBase.hpp
+F-Prime/Svc/Sched/Fw/Port/InputPortBase.hpp
+Fw/Port/OutputPortBase.hpp
+F-Prime/Svc/Sched/Fw/Port/OutputPortBase.hpp
+Fw/Types/Serializable.hpp
+F-Prime/Svc/Sched/Fw/Types/Serializable.hpp
+Fw/Types/StringType.hpp
+F-Prime/Svc/Sched/Fw/Types/StringType.hpp
 

@@ -8386,6 +8386,7 @@ Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Cfg/
 Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Comp/CMakeFiles/Fw_CompQueued.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Svc/Sched/CMakeFiles/Svc_Sched.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/all: F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/all
 	$(MAKE) $(MAKESILENT) -f Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/build.make Components/Burnwire/CMakeFiles/Components_Burnwire_impl.dir/depend
@@ -8429,6 +8430,7 @@ Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Comp/CMak
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Obj/CMakeFiles/Fw_Obj.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Port/CMakeFiles/Fw_Port.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Fw/Types/CMakeFiles/Fw_Types.dir/all
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Svc/Sched/CMakeFiles/Svc_Sched.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Os/CMakeFiles/Os.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Drv/GpioDriverPorts/CMakeFiles/Drv_GpioDriverPorts.dir/all
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/all: F-Prime/Utils/Hash/CMakeFiles/Utils_Hash.dir/all

@@ -98,6 +98,7 @@ namespace BurnwireTester {
   static const Svc::TlmPacketizerPacket SystemRes3 = { SystemRes3List, 7, 2, FW_NUM_ARRAY_ELEMENTS(SystemRes3List) };
 
   static const Svc::TlmPacketizerChannelEntry LedChannelsList[] = {
+      {3588, 4}, // burnwire.BurnwireCounter
       {3584, 4}, // burnwire.BurnwireState
   };
 

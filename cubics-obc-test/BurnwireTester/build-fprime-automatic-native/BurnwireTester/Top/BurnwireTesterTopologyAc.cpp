@@ -210,6 +210,10 @@ namespace BurnwireTester {
         0,
         gpioDriver.get_gpioWrite_InputPort(0)
     );
+    rateGroup1.set_RateGroupMemberOut_OutputPort(
+        3,
+        burnwire.get_run_InputPort(0)
+    );
 
     // Command
     cmdDisp.set_compCmdSend_OutputPort(

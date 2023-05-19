@@ -83,6 +83,13 @@ namespace Components {
     return &this->m_cmdIn_InputPort[portNum];
   }
 
+  Svc::InputSchedPort *BurnwireComponentBase ::
+    get_run_InputPort(NATIVE_INT_TYPE portNum)
+  {
+    FW_ASSERT(portNum < this->getNum_run_InputPorts(),static_cast<FwAssertArgType>(portNum));
+    return &this->m_run_InputPort[portNum];
+  }
+
   // ----------------------------------------------------------------------
   // Typed connectors for output ports
   // ----------------------------------------------------------------------
@@ -337,6 +344,34 @@ namespace Components {
           port
       );
       this->m_cmdIn_InputPort[port].setObjName(portName);
+#endif
+
+    }
+
+    // Connect input port run
+    for (
+        PlatformIntType port = 0;
+        port < static_cast<PlatformIntType>(this->getNum_run_InputPorts());
+        port++
+    ) {
+
+      this->m_run_InputPort[port].init();
+      this->m_run_InputPort[port].addCallComp(
+          this,
+          m_p_run_in
+      );
+      this->m_run_InputPort[port].setPortNum(port);
+
+#if FW_OBJECT_NAMES == 1
+      char portName[120];
+      (void) snprintf(
+          portName,
+          sizeof(portName),
+          "%s_run_InputPort[%" PRI_PlatformIntType "]",
+          this->m_objName,
+          port
+      );
+      this->m_run_InputPort[port].setObjName(portName);
 #endif
 
     }
@@ -627,6 +662,12 @@ namespace Components {
   }
 
   NATIVE_INT_TYPE BurnwireComponentBase ::
+    getNum_run_InputPorts()
+  {
+    return static_cast<NATIVE_INT_TYPE>(FW_NUM_ARRAY_ELEMENTS(this->m_run_InputPort));
+  }
+
+  NATIVE_INT_TYPE BurnwireComponentBase ::
     getNum_timeCaller_OutputPorts()
   {
     return static_cast<NATIVE_INT_TYPE>(FW_NUM_ARRAY_ELEMENTS(this->m_timeCaller_OutputPort));
@@ -892,6 +933,33 @@ namespace Components {
 
   }
 
+  void BurnwireComponentBase ::
+    tlmWrite_BurnwireCounter(U32 arg, Fw::Time _tlmTime)
+  {
+    if (this->m_tlmOut_OutputPort[0].isConnected()) {
+      if (this->m_timeCaller_OutputPort[0].isConnected() && _tlmTime ==  Fw::ZERO_TIME) {
+         this->m_timeCaller_OutputPort[0].invoke( _tlmTime);
+      }
+      Fw::TlmBuffer _tlmBuff;
+      Fw::SerializeStatus _stat = _tlmBuff.serialize(arg);
+      FW_ASSERT(
+          _stat == Fw::FW_SERIALIZE_OK,
+          static_cast<FwAssertArgType>(_stat)
+      );
+
+      FwChanIdType _id;
+
+      _id = this->getIdBase() + CHANNELID_BURNWIRECOUNTER;
+
+      this->m_tlmOut_OutputPort[0].invoke(
+          _id,
+          _tlmTime,
+          _tlmBuff
+      );
+    }
+
+  }
+
   // ----------------------------------------------------------------------
   // Time
   // ----------------------------------------------------------------------
@@ -1010,6 +1078,41 @@ namespace Components {
 
   }
 
+
+  // ----------------------------------------------------------------------
+  // Calls for invocations received on typed input ports
+  // ----------------------------------------------------------------------
+
+  void BurnwireComponentBase ::
+    m_p_run_in(
+        Fw::PassiveComponentBase* callComp,
+        NATIVE_INT_TYPE portNum,
+        NATIVE_UINT_TYPE context
+    )
+  {
+    FW_ASSERT(callComp);
+    BurnwireComponentBase* compPtr = static_cast<BurnwireComponentBase*>(callComp);
+    compPtr->run_handlerBase(portNum, context);
+  }
+
+  // ----------------------------------------------------------------------
+  // Port handler base-class functions for typed input ports
+  // ----------------------------------------------------------------------
+
+  void BurnwireComponentBase ::
+    run_handlerBase(
+        NATIVE_INT_TYPE portNum,
+        NATIVE_UINT_TYPE context
+    )
+  {
+
+    // Make sure port number is valid
+    FW_ASSERT(portNum < this->getNum_run_InputPorts(),static_cast<FwAssertArgType>(portNum));
+
+    // Down call to pure virtual handler method implemented in Impl class
+    this->run_handler(portNum, context);
+
+  }
 
   // ----------------------------------------------------------------------
   // Message dispatch method for active and queued components. Called

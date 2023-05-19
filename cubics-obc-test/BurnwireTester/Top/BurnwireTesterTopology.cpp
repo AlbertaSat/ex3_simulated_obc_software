@@ -111,8 +111,8 @@ void configureTopology() {
     uplink.setup(deframing);
 
 
-    //ADDED CUSTOM. Setting up GPIO pin 21 as an output. 
-    bool gpio_success = gpioDriver.open(21, Drv::LinuxGpioDriver::GpioDirection::GPIO_OUT);
+    //ADDED CUSTOM. Setting up GPIO pin 13 as an output. 
+    bool gpio_success = gpioDriver.open(13, Drv::LinuxGpioDriver::GpioDirection::GPIO_OUT);
 
     if (!gpio_success) {
         Fw::Logger::logMsg("[ERROR] Failed to open GPIO pin\n");

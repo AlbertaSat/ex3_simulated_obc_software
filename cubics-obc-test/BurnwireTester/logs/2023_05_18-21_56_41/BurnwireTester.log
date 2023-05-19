@@ -151,3 +151,5 @@ pthread_create: Insufficient permissions to create thread. May not set thread pr
 Connected to 0.0.0.0:50000 as a tcp client
 EVENT: (1281) (2:1684447026,289601) COMMAND: (cmdDisp) OpCodeDispatched : Opcode 0xeff dispatched to port 0
 EVENT: (1282) (2:1684447026,289640) COMMAND: (cmdDisp) OpCodeCompleted : Opcode 0xeff completed
+[WARNING] Failed to recv from port with status -8 and errno 0
+Exiting...

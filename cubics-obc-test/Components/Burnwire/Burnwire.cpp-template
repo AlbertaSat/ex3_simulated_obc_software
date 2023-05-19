@@ -29,6 +29,19 @@ namespace Components {
   }
 
   // ----------------------------------------------------------------------
+  // Handler implementations for user-defined typed input ports
+  // ----------------------------------------------------------------------
+
+  void Burnwire ::
+    run_handler(
+        const NATIVE_INT_TYPE portNum,
+        NATIVE_UINT_TYPE context
+    )
+  {
+    // TODO
+  }
+
+  // ----------------------------------------------------------------------
   // Command handler implementations
   // ----------------------------------------------------------------------
 

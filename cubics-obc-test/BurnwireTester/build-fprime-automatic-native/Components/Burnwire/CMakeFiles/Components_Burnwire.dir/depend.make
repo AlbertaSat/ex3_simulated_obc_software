@@ -55,6 +55,7 @@ Components/Burnwire/CMakeFiles/Components_Burnwire.dir/Burnwire.cpp.o: F-Prime/F
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/Burnwire.cpp.o: F-Prime/Fw/Tlm/TlmPortAc.hpp
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/Burnwire.cpp.o: F-Prime/Fw/Types/LogicEnumAc.hpp
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/Burnwire.cpp.o: F-Prime/Fw/Types/OnEnumAc.hpp
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/Burnwire.cpp.o: F-Prime/Svc/Sched/SchedPortAc.hpp
 
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/BurnwireComponentAc.cpp.o: Components/Burnwire/BurnwireComponentAc.cpp
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/BurnwireComponentAc.cpp.o: /home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Fw/Cfg/SerIds.hpp
@@ -109,4 +110,5 @@ Components/Burnwire/CMakeFiles/Components_Burnwire.dir/BurnwireComponentAc.cpp.o
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/BurnwireComponentAc.cpp.o: F-Prime/Fw/Tlm/TlmPortAc.hpp
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/BurnwireComponentAc.cpp.o: F-Prime/Fw/Types/LogicEnumAc.hpp
 Components/Burnwire/CMakeFiles/Components_Burnwire.dir/BurnwireComponentAc.cpp.o: F-Prime/Fw/Types/OnEnumAc.hpp
+Components/Burnwire/CMakeFiles/Components_Burnwire.dir/BurnwireComponentAc.cpp.o: F-Prime/Svc/Sched/SchedPortAc.hpp
 

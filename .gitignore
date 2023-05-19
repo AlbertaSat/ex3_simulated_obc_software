@@ -44,3 +44,4 @@ persistent/.bash_history
 cubics-obc-test/build*
 cubics-obc-test/venv/*
 
+cubics-obc-test/BurnwireTester/logs/*

@@ -951,6 +951,8 @@ Fw/Time/TimePortAc.hpp
 -
 Fw/Tlm/TlmPortAc.hpp
 -
+Svc/Sched/SchedPortAc.hpp
+-
 
 F-Prime/Drv/BlockDriver/BlockDriverComponentAc.hpp
 FpConfig.hpp
