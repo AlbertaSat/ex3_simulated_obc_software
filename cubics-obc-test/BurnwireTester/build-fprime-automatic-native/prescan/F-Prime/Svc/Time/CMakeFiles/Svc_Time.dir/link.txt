@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/Linux/libSvc_Time.a CMakeFiles/Svc_Time.dir/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/cmake/empty.cpp.o
+/usr/bin/ranlib ../../../lib/Linux/libSvc_Time.a

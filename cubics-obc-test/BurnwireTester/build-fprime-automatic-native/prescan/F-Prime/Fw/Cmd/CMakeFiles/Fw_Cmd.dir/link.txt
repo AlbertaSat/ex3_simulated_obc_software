@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/Linux/libFw_Cmd.a CMakeFiles/Fw_Cmd.dir/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/cmake/empty.cpp.o
+/usr/bin/ranlib ../../../lib/Linux/libFw_Cmd.a

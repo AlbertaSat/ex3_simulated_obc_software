@@ -42,5 +42,5 @@ Gemfile.lock
 persistent/.bash_history 
 
 cubics-obc-test/build*
-cubics-obc-test/venv*
+cubics-obc-test/venv/*
 

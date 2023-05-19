@@ -1,0 +1,11 @@
+rateGroup1.RgCycleSlips
+rateGroup2.RgCycleSlips
+rateGroup3.RgCycleSlips
+cmdSeq.CS_Errors
+fileUplink.Warnings
+fileDownlink.Warnings
+health.PingLateWarnings
+fileManager.Errors
+fileUplinkBufferManager.NoBuffs
+fileUplinkBufferManager.EmptyBuffs
+fileManager.Errors

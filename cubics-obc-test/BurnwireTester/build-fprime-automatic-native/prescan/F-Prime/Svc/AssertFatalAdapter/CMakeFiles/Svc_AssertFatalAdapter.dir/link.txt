@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/Linux/libSvc_AssertFatalAdapter.a CMakeFiles/Svc_AssertFatalAdapter.dir/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/cmake/empty.cpp.o
+/usr/bin/ranlib ../../../lib/Linux/libSvc_AssertFatalAdapter.a

@@ -8,6 +8,7 @@
 #define Burnwire_HPP
 
 #include "Components/Burnwire/BurnwireComponentAc.hpp"
+#include <Fw/Types/OnEnumAc.hpp>
 
 namespace Components {
 
@@ -33,17 +34,19 @@ namespace Components {
 
     PRIVATE:
 
+      // Component state tracking variables
+      Fw::On state; //Tracks state of whether or not burnwire is on or off. 
+
       // ----------------------------------------------------------------------
       // Command handler implementations
       // ----------------------------------------------------------------------
 
       //! Implementation for TODO command handler
-      //! TODO
-      void TODO_cmdHandler(
+      //! Comand to activate the burnwire
+      void ACTIVATE_BURNWIRE_cmdHandler(
           const FwOpcodeType opCode, /*!< The opcode*/
           const U32 cmdSeq /*!< The command sequence number*/
       );
-
 
     };
 
