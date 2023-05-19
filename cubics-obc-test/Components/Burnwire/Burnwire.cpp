@@ -44,26 +44,26 @@ namespace Components {
         //Turn off gpio
         //reset state to off
         // Port may not be connected, so check before sending output
-        // if (this->isConnected_gpioSet_OutputPort(0))
-        // {
-        //   this->gpioSet_out(0, Fw::Logic::LOW);
+        if (this->isConnected_gpioSet_OutputPort(0))
+        {
+          this->gpioSet_out(0, Fw::Logic::LOW);
           state = Fw::On::OFF;
           this->tlmWrite_BurnwireState(state);
           this->log_ACTIVITY_HI_SetBurnwireState(state);
      
-        // }
+        }
       }
       else if(count == 0){
         //turn on gpio 
-        // if (this->isConnected_gpioSet_OutputPort(0))
-        // {
-        //   this->gpioSet_out(0, Fw::Logic::HIGH);
+        if (this->isConnected_gpioSet_OutputPort(0))
+        {
+          this->gpioSet_out(0, Fw::Logic::HIGH);
           this->tlmWrite_BurnwireState(state);
           this->log_ACTIVITY_HI_SetBurnwireState(state);
           count = count + 1;
      
           
-        // }
+        }
       }
       else{
         //increment count
