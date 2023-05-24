@@ -1,8 +1,0 @@
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Fw/Buffer/Buffer.fpp
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Fw/Cmd/Cmd.fpp
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Fw/Log/Log.fpp
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Fw/Tlm/Tlm.fpp
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/BufferAccumulator/Commands.fppi
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/BufferAccumulator/Events.fppi
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/BufferAccumulator/Telemetry.fppi
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/Ping/Ping.fpp

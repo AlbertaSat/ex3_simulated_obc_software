@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/Linux/libSvc_PolyIf.a CMakeFiles/Svc_PolyIf.dir/__/__/cmake/empty.cpp.o
-/usr/bin/ranlib ../../../lib/Linux/libSvc_PolyIf.a
