@@ -1,2 +1,0 @@
-burnwire.BurnwireCounter
-burnwire.BurnwireState

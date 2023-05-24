@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/Linux/libComponents_Burnwire.a CMakeFiles/Components_Burnwire.dir/Burnwire.cpp.o CMakeFiles/Components_Burnwire.dir/BurnwireComponentAc.cpp.o
-/usr/bin/ranlib ../../lib/Linux/libComponents_Burnwire.a

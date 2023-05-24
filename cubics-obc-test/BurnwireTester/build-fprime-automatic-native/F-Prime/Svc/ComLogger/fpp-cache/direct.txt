@@ -1,6 +1,0 @@
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Fw/Cmd/Cmd.fpp
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Fw/Com/Com.fpp
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Fw/Log/Log.fpp
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/ComLogger/Commands.fppi
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/ComLogger/Events.fppi
-/home/fprime-dev/obc_software_nextgen_test/cubics-obc-test/fprime/Svc/Ping/Ping.fpp
