@@ -1,0 +1,45 @@
+{
+    "name": "CUBICS Fprime devcontainer",
+    "dockerFile": "Dockerfile",
+
+    "runArgs": [
+        "--name=cubics_obc_software_test",
+        //Expose xhost so that container can render correct display by r/w through x11 unix socket
+        "--env=DISPLAY",         //Allows docker to run GUI system
+        "--env=QT_X11_NO_MITSHM=1",
+        "--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",  //Mounts a temporary drive in /tmp/.X11-unix, with rw capabilities. This allows docker to run a gui
+
+        "--privileged",          //Allows Docker to use potentially dangerous kernel capabilities
+        "--net=host",            //Connect container to host network 
+        "--cap-add=SYS_ADMIN",   //add linux capabilities - system administrator
+        "--cap-add=SYS_PTRACE",  //ptrace - allows a process to control and inspect another process, and manipulate internal state
+        "--security-opt",        //Optional security options ??? 
+        "seccomp=unconfined"
+    ],
+
+    "remoteUser": "fprime-dev",
+
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/fprime-dev/${localWorkspaceFolderBasename},type=bind",
+
+    "workspaceFolder": "/home/fprime-dev/${localWorkspaceFolderBasename}",
+
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+        // "source=cubics_fprime_devcontainer-bashhistory,target=/commandhistory,type=volume",  //Mount for docker volume to record bash history
+        "source=${localWorkspaceFolder}/persistent,target=/home/fprime-dev/persistent,type=bind,consistency=cached" //Bind mount stores bash history in host machine dir
+    ],
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "twxs.cmake",
+                "ms-vscode.cmake-tools",
+                "ms-azuretools.vscode-docker",
+                "VisualStudioExptTeam.vscodeintellicode",
+                "ms-python.python",
+                "unlv-team5.fpptools"
+            ]
+        }
+    }
+}
