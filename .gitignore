@@ -44,6 +44,7 @@ persistent/.bash_history
 # For Fprime project builds and auto generated code 
 cubics-obc-test/build**
 cubics-obc-test/venv/** 
+cubics-obc-test/fprime/**
 
 
 # For individual component builds and auto generated code
