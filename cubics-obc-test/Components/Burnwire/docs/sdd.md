@@ -1,6 +1,6 @@
-# Burnwire::Burnwire
+# Components::Burnwire
 
-Burnwire component toggles a GPIO to
+Toggles GPIO pins to deploy deployables such as solar panels and DFGM
 
 ## Usage Examples
 Add usage examples here

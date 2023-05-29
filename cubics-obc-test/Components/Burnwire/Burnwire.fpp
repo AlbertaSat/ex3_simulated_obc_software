@@ -1,11 +1,26 @@
-module Burnwire {
-    @ Burnwire component toggles a GPIO to
+module Components {
+    @ Toggle burnwire transistors for deployables deployment. 
     active component Burnwire {
 
-        # One async command/port is required for active components
-        # This should be overridden by the developers with a useful command/port
-        @ TODO
-        async command TODO opcode 0
+        @ Comand to activate the burnwire 
+        async command ACTIVATE_BURNWIRE opcode 255
+
+        @ Telemetry channel to report burnwire state
+        telemetry BurnwireState: Fw.On
+
+        @ Telemetry channel to report the time burnwire has been active since last activated
+        telemetry BurnwireCounter: U32 id 4
+
+        @ Reports the state of the burnwire GPIO 
+        event SetBurnwireState(state: Fw.On) \
+            severity activity high \
+            format "Set burnwire state to {}."
+
+        @ Port receiving calls from the rate group
+        sync input port run: Svc.Sched
+        
+        @ Port sending calls to the GPIO driver
+        output port gpioSet: Drv.GpioWrite
 
         ##############################################################################
         #### Uncomment the following examples to start customizing your component ####

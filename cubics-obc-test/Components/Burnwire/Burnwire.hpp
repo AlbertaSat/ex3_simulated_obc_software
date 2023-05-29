@@ -7,9 +7,12 @@
 #ifndef Burnwire_HPP
 #define Burnwire_HPP
 
-#include "Components/Burnwire/BurnwireComponentAc.hpp"
+#define BURNWIRE_TIME_SECONDS 20
 
-namespace Burnwire {
+#include "Components/Burnwire/BurnwireComponentAc.hpp"
+#include <Fw/Types/OnEnumAc.hpp>
+
+namespace Components {
 
   class Burnwire :
     public BurnwireComponentBase
@@ -33,13 +36,26 @@ namespace Burnwire {
 
     PRIVATE:
 
+      // Component state tracking variables
+      Fw::On state; //Tracks state of whether or not burnwire is on or off. 
+      U32 count; //Incremented over a 1Hz rate group, until a certain time has passed
+      
       // ----------------------------------------------------------------------
       // Command handler implementations
       // ----------------------------------------------------------------------
 
-      //! Implementation for TODO command handler
-      //! TODO
-      void TODO_cmdHandler(
+       //! Handler implementation for run
+      //!
+      void run_handler(
+          const NATIVE_INT_TYPE portNum, /*!< The port number*/
+          NATIVE_UINT_TYPE context /*!< 
+      The call order
+      */
+      );
+
+      //! Implementation for ACTIVATE_BURNWIRE command handler
+      //! Comand to activate the burnwire
+      void ACTIVATE_BURNWIRE_cmdHandler(
           const FwOpcodeType opCode, /*!< The opcode*/
           const U32 cmdSeq /*!< The command sequence number*/
       );
@@ -47,6 +63,6 @@ namespace Burnwire {
 
     };
 
-} // end namespace Burnwire
+} // end namespace Components
 
 #endif
