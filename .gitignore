@@ -37,3 +37,20 @@ _site
 Gemfile.lock
 *.gem
 .jekyll-cache
+
+# For dev container stuff 
+.devcontainer/**
+
+# For container bash history
+persistent/.bash_history 
+
+# For fprime lib 
+cubics-obc-test/fprime/**
+
+# For Fprime project builds and auto generated code 
+cubics-obc-test/build**
+cubics-obc-test/venv/**
+
+# For individual component builds and auto generated code
+cubics-obc-test/BurnwireTester/build**
+cubics-obc-test/BurnwireTester/logs/**
