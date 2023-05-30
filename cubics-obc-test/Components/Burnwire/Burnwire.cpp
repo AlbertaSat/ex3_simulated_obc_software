@@ -18,7 +18,7 @@ namespace Components {
   Burnwire ::
     Burnwire(
         const char *const compName
-    ) : BurnwireComponentBase(compName) 
+    ) : BurnwireComponentBase(compName)
   {
 
   }
@@ -33,6 +33,18 @@ namespace Components {
   // Handler implementations for user-defined typed input ports
   // ----------------------------------------------------------------------
 
+/*
+ *   When ACTIVATE_BURNWIRE_cmdHandler() toggles the burnwire state to Fw::On::ON, and
+ *   sets the counter value is to zero, this function toggles the burnwire GPIO high. 
+ *   This function will report via telemetry and log the burnwire state, and increment
+ *   a counter once per second. Once the counter value exceeds BURNWIRE_TIME_SECONDS, 
+ *   the state is set of OFF. The counter value is not reset here in case the state is 
+ *   somehow set to ON erronesouly, then the function will simply set the state to back 
+ *   to OFF. 
+ * 
+ *   A 1Hz rate group timer output must be attached to the input port of this component. 
+ *   This is done within the topology.fpp file of the deployment using it.
+ */
   void Burnwire ::
     run_handler(
         const NATIVE_INT_TYPE portNum,
@@ -40,7 +52,7 @@ namespace Components {
     )
   {
     if(state == Fw::On::ON){
-      if(count >= 20){
+      if(count >= BURNWIRE_TIME_SECONDS){
         //Turn off gpio
         //reset state to off
         // Port may not be connected, so check before sending output
@@ -63,11 +75,9 @@ namespace Components {
         // }
       }
       else{
-        //increment count
         count = count+1; 
         this->tlmWrite_BurnwireCounter(count);
       }
-
     }
   }
 
@@ -75,6 +85,10 @@ namespace Components {
   // Command handler implementations
   // ----------------------------------------------------------------------
 
+/*
+ *   Sets the burnwire state to ON and resets the counter to zero. This will allow the 
+ *   run_handler to begin. 
+ */
   void Burnwire ::
     ACTIVATE_BURNWIRE_cmdHandler(
         const FwOpcodeType opCode,
@@ -84,13 +98,11 @@ namespace Components {
     // Create a variable to represent the command response
     auto cmdResp = Fw::CmdResponse::OK;
 
-    //This function just sets the burnwire state to 'on' and resets the counter to zero 
     state = Fw::On::ON;
     count = 0; 
     this->tlmWrite_BurnwireCounter(count);
   
     //run_handler function uses a scheduled input port to receive calls from rate group. If the burnwire state is 'off', ignore them. 
-    //Increment count. Rate group should call this fxn each second (using 1Hz rate group)
 
     this->cmdResponse_out(opCode,cmdSeq,Fw::CmdResponse::OK);
   }

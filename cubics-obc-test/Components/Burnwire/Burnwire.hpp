@@ -48,9 +48,7 @@ namespace Components {
       //!
       void run_handler(
           const NATIVE_INT_TYPE portNum, /*!< The port number*/
-          NATIVE_UINT_TYPE context /*!< 
-      The call order
-      */
+          NATIVE_UINT_TYPE context /*!< The call order*/
       );
 
       //! Implementation for ACTIVATE_BURNWIRE command handler
