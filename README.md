@@ -1,5 +1,5 @@
-# obc_software_nextgen_test
-Next generation linux based OBC software
+# ex3_simulated_obc_software
+Simulated OBC software for ExAlta3. Built around NASA's Fprime framework. 
 
 &nbsp;
 
