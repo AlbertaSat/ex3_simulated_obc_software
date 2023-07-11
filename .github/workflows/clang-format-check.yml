@@ -1,0 +1,40 @@
+name: Clang Format Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        path: 
+          # Each directory containing any c/c++ files must be manually added here!
+          # The clang-format-action repository cannot recursively search for files within nested directories. 
+          # NOTE: If the directory cannot be found, this will attempt to check EVERY file in the project. 
+          #       This will result in a failure as we do not want to worry about formatting for autogen code.
+          - './cubics-obc-test/Components/Burnwire/'
+        
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check if .clang-format file exists in project root directory.
+        continue-on-error: false
+        run: |
+          if [ -f .clang-format ]; then
+            echo "SUCCESS .clang-format file exists in root directory."
+          else
+            echo "ERROR: No .clang-format file found in root directory. To ensure consistency please use the file provided in the repo"
+            exit 1
+          fi
+
+      - name: Run clang-format style check for C/C++ files.
+        uses: jidicula/clang-format-action@v4.11.0
+        with:
+          clang-format-version: '15'
+          check-path: ${{ matrix.path }} 
+
