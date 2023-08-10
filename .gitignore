@@ -51,6 +51,11 @@ cubics-obc-test/fprime/**
 cubics-obc-test/build**
 cubics-obc-test/venv/**
 
-# For individual component builds and auto generated code
+# For auto generated code
 cubics-obc-test/BurnwireTester/build**
 cubics-obc-test/BurnwireTester/logs/**
+
+cubics-obc-test/SimulationDeployment/build**
+cubics-obc-test/SimulationDeployment/logs/**
+
+
