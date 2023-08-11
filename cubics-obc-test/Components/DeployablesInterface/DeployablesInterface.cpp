@@ -78,6 +78,18 @@ namespace Components {
   {
     // Put the received data into the client TCP socket to be sent to the deployables component
 
+    char outgoingData[REPLY_BUFFER_MAX_CHARS] = {0};
+    strcpy(outgoingData, a.toChar());
+
+    ssize_t len = send(client_fd, outgoingData, strlen(outgoingData), 0);
+    if (len > 0) {
+        fprintf(stderr, "Socket send success \n");
+        this->log_ACTIVITY_LO_sentDeployableData(outgoingData);
+    } else {
+        fprintf(stderr, "Socket send failure \n");
+        this->log_WARNING_HI_socketSendFailure("Socket send failure");
+    }
+
   }
 
 } // end namespace Components

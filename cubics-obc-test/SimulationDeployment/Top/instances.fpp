@@ -87,6 +87,7 @@ module SimulationDeployment {
     stack size Default.STACK_SIZE \
     priority 96
 
+
   # ----------------------------------------------------------------------
   # Queued component instances
   # ----------------------------------------------------------------------
@@ -125,5 +126,8 @@ module SimulationDeployment {
   instance systemResources: Svc.SystemResources base id 0x4A00
 
   instance comStub: Svc.ComStub base id 0x4B00
+
+  instance deployablesInterface: Components.DeployablesInterface base id 0x0F00 \
+
 
 }

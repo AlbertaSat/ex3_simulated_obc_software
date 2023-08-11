@@ -41,6 +41,7 @@ module SimulationDeployment {
     instance rateGroupDriver
     instance textLogger
     instance systemResources
+    instance deployablesInterface
 
     # ----------------------------------------------------------------------
     # Pattern graph specifiers
