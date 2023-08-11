@@ -3,3 +3,4 @@
 add_fprime_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Components/Burnwire/")
 add_fprime_subdirectory("${CMAKE_CURRENT_LIST_DIR}/SimulationDeployment/")
 add_fprime_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Components/DeployablesInterface/")
+add_fprime_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Components/DeployablesService/")

@@ -42,6 +42,7 @@ module SimulationDeployment {
     instance textLogger
     instance systemResources
     instance deployablesInterface
+    instance deployablesService
 
     # ----------------------------------------------------------------------
     # Pattern graph specifiers

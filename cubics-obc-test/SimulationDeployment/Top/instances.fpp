@@ -87,6 +87,12 @@ module SimulationDeployment {
     stack size Default.STACK_SIZE \
     priority 96
 
+  instance deployablesService: Components.DeployablesService base id 0x1D00 \
+    queue size Default.QUEUE_SIZE \
+    stack size Default.STACK_SIZE \
+    priority 96
+
+
 
   # ----------------------------------------------------------------------
   # Queued component instances
