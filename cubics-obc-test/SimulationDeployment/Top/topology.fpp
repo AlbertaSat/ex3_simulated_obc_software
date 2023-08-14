@@ -137,6 +137,10 @@ module SimulationDeployment {
 
     connections SimulationDeployment {
       # Add here connections to user-defined components
+
+      deployablesService.deployableToggleBurnwirePort -> deployablesInterface.deployableDataOutgoing
+      deployablesInterface.deployableDataIncoming -> deployablesService.deployableFeedbackSwitchPort
+      
     }
 
   }
