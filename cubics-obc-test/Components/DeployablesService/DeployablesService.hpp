@@ -11,9 +11,16 @@
 
 #include <map>
 #include <string>
+#include <array>
+#include <iostream>
 
 #define NAME_CHAR_MAX 32
 #define NUMBER_OF_DEPLOYABLES 7
+
+#define BURNWIRE_WAIT_TIME_SECONDS 20
+#define SWITCH_QUERY_RESPONSE_WAIT_TIME_SECONDS 5
+
+#define NUMBER_OF_DEPLOYMENT_ATTEMPTS 3
 
 
 namespace Components {
@@ -22,6 +29,12 @@ namespace Components {
     STOWED = 0,
     PENDING = 1,
     DEPLOYED = 2,
+    FAILED_ALL_ATTEMPTS = 3,   //If the deployment was attempted N times and still failed... 
+  };
+
+  struct DeployableInfo {
+    DeployableStatus status;
+    int numAttempts;
   };
 
   class DeployablesService :
@@ -47,7 +60,20 @@ namespace Components {
     PRIVATE:
 
       // Holds a reference to each component and its associated deployment status 
-      std::map<std::string, DeployableStatus> deployablesMap;
+      std::map<std::string, DeployableInfo> deployablesMap;
+
+      // Holds the order in which the deployables will be attempted deployment 
+      std::array<std::string, NUMBER_OF_DEPLOYABLES> LEOPDeploymentSequence;
+
+      void attemptDeployment(const std::string& deployableName);
+
+      void updateDeployableStatus(const std::string& deployableName, DeployableStatus status);
+
+      void updateDeployableAttempts(const std::string& deployableName, int numAttempts);
+
+      std::string getStatusString(DeployableStatus status);
+
+      void printAllDeployablesStatus();
 
 
       // ----------------------------------------------------------------------

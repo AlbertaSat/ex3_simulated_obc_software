@@ -62,7 +62,7 @@ namespace Components {
             struct timeval timeout;
             FD_ZERO(&set);
             FD_SET(client_fd, &set);
-            timeout.tv_sec = 10;
+            timeout.tv_sec = THREAD_READ_TIMEOUT_SECONDS;
             timeout.tv_usec = 0;
 
             int result = select(client_fd + 1, NULL, &set, NULL, &timeout);
@@ -94,45 +94,14 @@ namespace Components {
         }
     }
 
-    // Create a thread to handle socket read
+    // Create a thread to handle socket reading
     std::thread socketReadThread(&DeployablesInterface::handleSocketRead, this, client_fd);
-    socketReadThread.detach(); // Detach the thread so it runs independently
-
+    socketReadThread.detach(); // Detach the thread so it runs independently 
 
     return 0;
-
   }
-  // int DeployablesInterface :: openSocket(){
-  //   // get file descriptor for client:
-  //   if ((client_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-  //       fprintf(stderr, "Socket creation error \n");
-  //       this->log_WARNING_HI_socketOpenFailure("Socket creation error");
-  //       return -1;
-  //   }
 
-  //   // Initialize server socket with expected port and family
-  //   serv_addr.sin_family = AF_INET;
-  //   serv_addr.sin_port = htons(TCP_PORT);
-
-  //   // Convert IPv4 and IPv6 addresses from text to binary
-  //   if (inet_pton(AF_INET, LOCAL_HOST, &serv_addr.sin_addr) <= 0) {
-  //       fprintf(stderr, "Invalid socket address \n");
-  //       this->log_WARNING_HI_socketOpenFailure(
-  //           "Invalid address/ Address not supported");
-  //       return -1;
-  //   }
-
-  //   // Attempt to connect to port
-  //   if ((status = connect(client_fd, (struct sockaddr *)&serv_addr,
-  //                         sizeof(serv_addr))) < 0) {
-  //       fprintf(stderr, "Port connection failed \n");
-  //       this->log_WARNING_HI_socketOpenFailure("Port Connection Failed");
-  //       return -1;
-  //   }
-
-  //   return 0;
-  // }
-
+  // Runs in an independent thread, handles reading from the socket with the select function
   void DeployablesInterface :: handleSocketRead(int client_fd){
     char buffer[MAX_BUFFER_CHARS];
     fd_set set;
@@ -150,15 +119,15 @@ namespace Components {
             perror("Select error");
         }
 
+        //If there is data to be read from this socket, read it and send it to DeployablesService component 
         if (FD_ISSET(client_fd, &set)) {
             memset(buffer, 0, sizeof(buffer));
             read(client_fd, buffer, sizeof(buffer));
-            printf("From server: %s\n", buffer);
+            fprintf(stderr, "From server: %s\n", buffer);
 
            this->deployableDataIncoming_out(0, buffer);
         }
     }
-
   }
 
   void DeployablesInterface :: closeSocket(){
@@ -170,14 +139,13 @@ namespace Components {
   // Handler implementations for user-defined typed input ports
   // ----------------------------------------------------------------------
 
+  // Put the received data into the client TCP socket to be sent to the deployables component
   void DeployablesInterface ::
     deployableDataOutgoing_handler(
         const NATIVE_INT_TYPE portNum,
         const aString &a
     )
   {
-    // Put the received data into the client TCP socket to be sent to the deployables component
-
     char outgoingData[MAX_BUFFER_CHARS] = {0};
     strcpy(outgoingData, a.toChar());
 

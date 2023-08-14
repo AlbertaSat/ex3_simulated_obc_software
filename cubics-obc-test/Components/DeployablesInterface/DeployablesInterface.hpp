@@ -13,6 +13,8 @@
 
 #define MAX_BUFFER_CHARS 1024
 
+#define THREAD_READ_TIMEOUT_SECONDS 10
+
 #define SA struct sockaddr
 
 #include <arpa/inet.h>

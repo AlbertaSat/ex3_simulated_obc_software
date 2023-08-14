@@ -30,6 +30,37 @@ module Components {
             severity activity low \
             format "Deployable {} burnwire toggled to: {}"
 
+        @ Log deployable successfully deployed (feedback switch reading is high)
+        event deployableDeployed(target_component: string) \
+            severity activity low \
+            format "Deployable: {} deployment successful!"
+
+        @ Log deployable deployment is pending (burnwire set but awaiting switch reading)
+        event deployablePending(target_component: string) \
+            severity activity low \
+            format "Deployable: {} deployment is pending..."
+
+        @ Log deployable is stowed (feedback switch reading is low)
+        event deployableStowed(target_component: string) \
+            severity activity low \
+            format "Deployable: {} is stowed [not deployed]"
+        
+
+        @ Log deployment sequence started 
+        event deploymentSequenceStarted (target_component: string) \
+            severity activity low \
+            format "Deployable: {} deployment sequence started"
+
+        @ Log deployment sequence ended
+        event deploymentSequenceEnded(target_component: string) \
+            severity activity low \
+            format "Deployable: {} deployment sequence ended"
+
+
+
+
+
+
         # ----------------------------------------------------------------------
         # Parameters
         # ----------------------------------------------------------------------
