@@ -11,7 +11,9 @@
 #define LOCAL_HOST "127.0.0.1"
 #define TCP_PORT 1811
 
-#define REPLY_BUFFER_MAX_CHARS 1024
+#define MAX_BUFFER_CHARS 1024
+
+#define SA struct sockaddr
 
 #include <arpa/inet.h>
 #include <errno.h>
@@ -49,11 +51,13 @@ namespace Components {
       int status;
       int client_fd;
       struct sockaddr_in serv_addr;
-      char incomingData[REPLY_BUFFER_MAX_CHARS] = {0};
+      char incomingData[MAX_BUFFER_CHARS] = {0};
 
       int openSocket();
 
       void closeSocket();
+
+      void handleSocketRead(int sockfd);
 
       // ----------------------------------------------------------------------
       // Handler implementations for user-defined typed input ports

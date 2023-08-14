@@ -8,6 +8,8 @@
 #include <Components/DeployablesService/DeployablesService.hpp>
 #include <FpConfig.hpp>
 
+#include <unistd.h>
+
 
 namespace Components {
 
@@ -47,7 +49,19 @@ namespace Components {
         const aString &a
     )
   {
+    //Update the deployables map with the feedback switch status
     
+    std::string responseString = a.toChar();
+
+    //Parse the response string to get the deployable name and feedback switch status
+    std::string delimiter = ":";
+    std::string deployableName = responseString.substr(0, responseString.find(delimiter));
+    std::string feedbackSwitchStatus = responseString.substr(responseString.find(delimiter) + 1, responseString.length());
+
+    fprintf(stdout,"Deployable name: %s\n", deployableName.c_str());
+    fprintf(stdout,"Feedback switch status: %s\n", feedbackSwitchStatus.c_str());
+
+
   }
 
   // ----------------------------------------------------------------------
@@ -61,7 +75,19 @@ namespace Components {
     )
   {
     //Send command to toggle DFGM burnwire HIGH  
+    this->deployableToggleBurnwirePort_out(0, "burnwire_set:DFGM:1");
+    this->log_ACTIVITY_LO_burnwireToggled("DFGM", "1");
+
+    //Wait 20 seconds. Request feedback switch status. 
+    // If feedback switch is HIGH, then toggle burnwire LOW
+    // If feedback switch is LOW, leave burnwire HIGH and wait another 20 seconds 
     
+    sleep(20);
+    this->deployableToggleBurnwirePort_out(0, "switch_request:DFGM");
+    sleep(5); //Wait for response to come in 
+
+
+    //Check DFGM switch status 
 
     this->cmdResponse_out(opCode,cmdSeq,Fw::CmdResponse::OK);
   }

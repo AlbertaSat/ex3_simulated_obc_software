@@ -1,6 +1,6 @@
 module Components {
     
-    # @ A port for carrying a string
+    @ A port for carrying a string
     port StringValue(a: string)
     
     @ Interface for deployable items (gpios for burnwires and switches) on SC
