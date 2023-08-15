@@ -123,16 +123,18 @@ namespace Components {
         if (FD_ISSET(client_fd, &set)) {
             memset(buffer, 0, sizeof(buffer));
             read(client_fd, buffer, sizeof(buffer));
-            fprintf(stderr, "From server: %s\n", buffer);
-
+            // fprintf(stderr, "From server: %s\n", buffer);
+            this->log_ACTIVITY_LO_receivedDeployableData(buffer);
            this->deployableDataIncoming_out(0, buffer);
+           
         }
     }
   }
 
   void DeployablesInterface :: closeSocket(){
     close(client_fd);
-    fprintf(stderr, "Socket closed \n");
+    // fprintf(stderr, "Socket closed \n");
+    this->log_ACTIVITY_LO_socketClosed();
   }
 
   // ----------------------------------------------------------------------
@@ -151,10 +153,10 @@ namespace Components {
 
     ssize_t len = send(client_fd, outgoingData, strlen(outgoingData), 0);
     if (len > 0) {
-        fprintf(stderr, "Socket send success \n");
+        // fprintf(stderr, "Socket send success \n");
         this->log_ACTIVITY_LO_sentDeployableData(outgoingData);
     } else {
-        fprintf(stderr, "ERROR: Socket send failure: %s \n", strerror(errno));
+        // fprintf(stderr, "ERROR: Socket send failure: %s \n", strerror(errno));
         this->log_WARNING_HI_socketSendFailure("Socket send failure");
     }
 

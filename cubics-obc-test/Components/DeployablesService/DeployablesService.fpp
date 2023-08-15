@@ -7,7 +7,7 @@ module Components {
         # Ports
         # ----------------------------------------------------------------------
         @ Port for receiving status from feedback switch query 
-        async input port deployableFeedbackSwitchPort: StringValue
+        sync input port deployableFeedbackSwitchPort: StringValue
 
         @ Port for toggling a burnwire
         output port deployableToggleBurnwirePort: StringValue
@@ -47,14 +47,14 @@ module Components {
         
 
         @ Log deployment sequence started 
-        event deploymentSequenceStarted (target_component: string) \
+        event deploymentSequenceStarted () \
             severity activity low \
-            format "Deployable: {} deployment sequence started"
+            format "Deployment sequence started"
 
         @ Log deployment sequence ended
-        event deploymentSequenceEnded(target_component: string) \
+        event deploymentSequenceEnded() \
             severity activity low \
-            format "Deployable: {} deployment sequence ended"
+            format "Deployment sequence ended"
 
 
 

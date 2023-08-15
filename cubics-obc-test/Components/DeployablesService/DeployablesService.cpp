@@ -68,13 +68,14 @@ namespace Components {
   }
 
   void DeployablesService :: printAllDeployablesStatus(){
+    std::cout << "---------- Deployables Status ----------" << std::endl;
     for (const std::string& deployableName : LEOPDeploymentSequence){
       const DeployableInfo& deployableInfo = deployablesMap[deployableName];
-
       std::cout << "Deployable: " << deployableName
                   << ", Status: " << getStatusString(deployableInfo.status)
                   << ", Attempts: " << deployableInfo.numAttempts << std::endl;
     }
+    std::cout << "----------------------------------------" << std::endl;
   }
 
 
@@ -95,23 +96,25 @@ namespace Components {
   }
 
   void DeployablesService :: attemptDeployment(const std::string& deployableName){
-    const DeployableInfo& deployableInfo = deployablesMap[deployableName.c_str()];
+    DeployableInfo& deployableInfo = deployablesMap[deployableName.c_str()];
+
+    //Build string to send to deployables interface
+    std::string burnwireSetString = "burnwire_set:" + deployableName + ":1";
+
+    //Send command to toggle target component burnwire HIGH to deployables interface via port 
+    this->deployableToggleBurnwirePort_out(0, burnwireSetString.c_str());
 
     while(deployableInfo.numAttempts < NUMBER_OF_DEPLOYMENT_ATTEMPTS && deployableInfo.status != DeployableStatus::DEPLOYED){
-      //Build string to send to deployables interface
-      std::string burnwireSetString = "burnwire_set:" + deployableName + ":1";
-
-      //Send command to toggle target component burnwire HIGH to deployables interface via port 
-      this->deployableToggleBurnwirePort_out(0, burnwireSetString.c_str());
+      deployableInfo = deployablesMap[deployableName.c_str()];
 
       //Wait for deployable burnwire to physically burn
       sleep(BURNWIRE_WAIT_TIME_SECONDS); 
 
       //Build string to send query for target components feedback switch status
-      std::string switchStatusQueryString = "switch_query:" + deployableName;
+      std::string switchStatusRequestString = "switch_request:" + deployableName;
 
       //Send command to query target component feedback switch status to deployables interface via port 
-      this->deployableToggleBurnwirePort_out(0, switchStatusQueryString.c_str());
+      this->deployableToggleBurnwirePort_out(0, switchStatusRequestString.c_str());
 
       //Wait for response to come in from deployables interface
       sleep(SWITCH_QUERY_RESPONSE_WAIT_TIME_SECONDS); 
@@ -122,7 +125,15 @@ namespace Components {
       if(deployableInfo.numAttempts >= NUMBER_OF_DEPLOYMENT_ATTEMPTS){
         updateDeployableStatus(deployableName, DeployableStatus::FAILED_ALL_ATTEMPTS);
       }
+
+      printAllDeployablesStatus();
     }
+
+    //Set burnwire LOW 
+    burnwireSetString = "burnwire_set:" + deployableName + ":0";
+
+    this->deployableToggleBurnwirePort_out(0, burnwireSetString.c_str());
+
   }
   
 
@@ -140,14 +151,18 @@ namespace Components {
   {
     //Convert the response string to std::string for easier manipulation
     std::string responseString = a.toChar();
-
+    
     //Parse the response string to get the deployable name and feedback switch status
     std::string delimiter = ":";
     std::string deployableName = responseString.substr(0, responseString.find(delimiter));
-    std::string feedbackSwitchStatus = responseString.substr(responseString.find(delimiter) + 1, responseString.length());
 
-    fprintf(stdout,"Deployable name: %s\n", deployableName.c_str());
-    fprintf(stdout,"Feedback switch status: %s\n", feedbackSwitchStatus.c_str());
+    // Ignore the string if the first token is not a deployable name 
+    if(deployablesMap.find(deployableName.c_str()) == deployablesMap.end()){
+      return;
+    }
+    std::string feedbackSwitchStatus = responseString.substr(responseString.find(delimiter) + 1, responseString.length());
+    // fprintf(stderr,"Deployable name: %s\n", deployableName.c_str());
+    // fprintf(stderr,"Feedback switch status: %s\n", feedbackSwitchStatus.c_str());
 
     if(feedbackSwitchStatus == "1"){
       updateDeployableStatus(deployableName, DeployableStatus::DEPLOYED);
@@ -166,10 +181,12 @@ namespace Components {
         const U32 cmdSeq
     )
   {
+    this->log_ACTIVITY_LO_deploymentSequenceStarted();
     //Loop through all items in deployables map and attempt to deploy them
     for (const std::string& deployableName : LEOPDeploymentSequence){
       attemptDeployment(deployableName);
     }
+    this->log_ACTIVITY_LO_deploymentSequenceEnded();
 
     this->cmdResponse_out(opCode,cmdSeq,Fw::CmdResponse::OK);
   }
