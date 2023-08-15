@@ -4,40 +4,29 @@
 // \brief  cpp file for DeployablesInterface component implementation class
 // ======================================================================
 
-
 #include <Components/DeployablesInterface/DeployablesInterface.hpp>
 #include <FpConfig.hpp>
 
-#include <fcntl.h>   // For fcntl
-#include <sys/select.h> // For select
-
-#include <thread>
-
+#include <fcntl.h> // For non blocking port reading with 'select' fxn
+#include <sys/select.h>
+#include <thread>  //For seperate thread to read port constantly
 #include <errno.h>
 #include <string.h>
 
 namespace Components {
 
-  // ----------------------------------------------------------------------
-  // Construction, initialization, and destruction
-  // ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
+// Construction, initialization, and destruction
+// ----------------------------------------------------------------------
 
-  DeployablesInterface ::
-    DeployablesInterface(
-        const char *const compName
-    ) : DeployablesInterfaceComponentBase(compName)
-  {
+DeployablesInterface ::DeployablesInterface(const char *const compName)
+    : DeployablesInterfaceComponentBase(compName) {
     openSocket();
-  }
+}
 
-  DeployablesInterface ::
-    ~DeployablesInterface()
-  {
-    closeSocket();
-  }
+DeployablesInterface ::~DeployablesInterface() { closeSocket(); }
 
-  int DeployablesInterface :: openSocket()
-  {
+int DeployablesInterface ::openSocket() {
     struct sockaddr_in servaddr;
 
     client_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -56,7 +45,7 @@ namespace Components {
     int flags = fcntl(client_fd, F_GETFL, 0);
     fcntl(client_fd, F_SETFL, flags | O_NONBLOCK);
 
-    if (connect(client_fd, (SA*)&servaddr, sizeof(servaddr)) < 0) {
+    if (connect(client_fd, (SA *)&servaddr, sizeof(servaddr)) < 0) {
         if (errno == EINPROGRESS) {
             fd_set set;
             struct timeval timeout;
@@ -67,17 +56,18 @@ namespace Components {
 
             int result = select(client_fd + 1, NULL, &set, NULL, &timeout);
             if (result < 0 && errno != EINTR) {
-                perror("Error during connection to Deployables Interface socket");
+                perror(
+                    "Error during connection to Deployables Interface socket");
                 return 1;
-            }
-            else if (result > 0) {
+            } else if (result > 0) {
                 int so_error;
                 socklen_t len = sizeof so_error;
 
                 getsockopt(client_fd, SOL_SOCKET, SO_ERROR, &so_error, &len);
 
                 if (so_error == 0) {
-                    printf("Successfully connected to Deployables Interface socket\n");
+                    printf("Successfully connected to Deployables Interface "
+                           "socket\n");
                 } else {
                     // Connection failed
                     errno = so_error;
@@ -85,7 +75,8 @@ namespace Components {
                     return 1;
                 }
             } else {
-                fprintf(stderr, "Timeout or error during Deployables Interface connection\n");
+                fprintf(stderr, "Timeout or error during Deployables Interface "
+                                "connection\n");
                 return 1;
             }
         } else {
@@ -95,19 +86,21 @@ namespace Components {
     }
 
     // Create a thread to handle socket reading
-    std::thread socketReadThread(&DeployablesInterface::handleSocketRead, this, client_fd);
-    socketReadThread.detach(); // Detach the thread so it runs independently 
+    std::thread socketReadThread(&DeployablesInterface::handleSocketRead, this,
+                                 client_fd);
+    socketReadThread.detach(); // Detach the thread so it runs independently
 
     return 0;
-  }
+}
 
-  // Runs in an independent thread, handles reading from the socket with the select function
-  void DeployablesInterface :: handleSocketRead(int client_fd){
+// Runs in an independent thread, handles reading from the socket with the
+// select function
+void DeployablesInterface ::handleSocketRead(int client_fd) {
     char buffer[MAX_BUFFER_CHARS];
     fd_set set;
     struct timeval timeout;
 
-    while(1) {
+    while (1) {
         FD_ZERO(&set);
         FD_SET(client_fd, &set);
         timeout.tv_sec = 10;
@@ -115,39 +108,36 @@ namespace Components {
 
         int activity = select(client_fd + 1, &set, NULL, NULL, &timeout);
 
-        if ((activity < 0) && (errno!=EINTR)) {
+        if ((activity < 0) && (errno != EINTR)) {
             perror("Select error");
         }
 
-        //If there is data to be read from this socket, read it and send it to DeployablesService component 
+        // If there is data to be read from this socket, read it and send it to
+        // DeployablesService component
         if (FD_ISSET(client_fd, &set)) {
             memset(buffer, 0, sizeof(buffer));
             read(client_fd, buffer, sizeof(buffer));
             // fprintf(stderr, "From server: %s\n", buffer);
             this->log_ACTIVITY_LO_receivedDeployableData(buffer);
-           this->deployableDataIncoming_out(0, buffer);
-           
+            this->deployableDataIncoming_out(0, buffer);
         }
     }
-  }
+}
 
-  void DeployablesInterface :: closeSocket(){
+void DeployablesInterface ::closeSocket() {
     close(client_fd);
     // fprintf(stderr, "Socket closed \n");
     this->log_ACTIVITY_LO_socketClosed();
-  }
+}
 
-  // ----------------------------------------------------------------------
-  // Handler implementations for user-defined typed input ports
-  // ----------------------------------------------------------------------
+// ----------------------------------------------------------------------
+// Handler implementations for user-defined typed input ports
+// ----------------------------------------------------------------------
 
-  // Put the received data into the client TCP socket to be sent to the deployables component
-  void DeployablesInterface ::
-    deployableDataOutgoing_handler(
-        const NATIVE_INT_TYPE portNum,
-        const aString &a
-    )
-  {
+// Put the received data into the client TCP socket to be sent to the
+// deployables component
+void DeployablesInterface ::deployableDataOutgoing_handler(
+    const NATIVE_INT_TYPE portNum, const aString &a) {
     char outgoingData[MAX_BUFFER_CHARS] = {0};
     strcpy(outgoingData, a.toChar());
 
@@ -156,10 +146,10 @@ namespace Components {
         // fprintf(stderr, "Socket send success \n");
         this->log_ACTIVITY_LO_sentDeployableData(outgoingData);
     } else {
-        // fprintf(stderr, "ERROR: Socket send failure: %s \n", strerror(errno));
+        // fprintf(stderr, "ERROR: Socket send failure: %s \n",
+        // strerror(errno));
         this->log_WARNING_HI_socketSendFailure("Socket send failure");
     }
-
-  }
+}
 
 } // end namespace Components

@@ -22,86 +22,83 @@
 
 #define NUMBER_OF_DEPLOYMENT_ATTEMPTS 3
 
-
 namespace Components {
 
-  enum class DeployableStatus {
+enum class DeployableStatus {
     STOWED = 0,
     PENDING = 1,
     DEPLOYED = 2,
-    FAILED_ALL_ATTEMPTS = 3,   //If the deployment was attempted N times and still failed... 
-  };
+    FAILED_ALL_ATTEMPTS =
+        3, // If the deployment was attempted N times and still failed...
+};
 
-  struct DeployableInfo {
+struct DeployableInfo {
     DeployableStatus status;
     int numAttempts;
-  };
+};
 
-  class DeployablesService :
-    public DeployablesServiceComponentBase
-  {
+class DeployablesService : public DeployablesServiceComponentBase {
 
-    public:
+  public:
+    // ----------------------------------------------------------------------
+    // Construction, initialization, and destruction
+    // ----------------------------------------------------------------------
 
-      // ----------------------------------------------------------------------
-      // Construction, initialization, and destruction
-      // ----------------------------------------------------------------------
+    //! Construct object DeployablesService
+    //!
+    DeployablesService(const char *const compName /*!< The component name*/
+    );
 
-      //! Construct object DeployablesService
-      //!
-      DeployablesService(
-          const char *const compName /*!< The component name*/
-      );
+    //! Destroy object DeployablesService
+    //!
+    ~DeployablesService();
 
-      //! Destroy object DeployablesService
-      //!
-      ~DeployablesService();
+    PRIVATE :
 
-    PRIVATE:
+        // Holds a reference to each component and its associated deployment
+        // status
+        std::map<std::string, DeployableInfo>
+            deployablesMap;
 
-      // Holds a reference to each component and its associated deployment status 
-      std::map<std::string, DeployableInfo> deployablesMap;
+    // Holds the order in which the deployables will be attempted deployment
+    std::array<std::string, NUMBER_OF_DEPLOYABLES> LEOPDeploymentSequence;
 
-      // Holds the order in which the deployables will be attempted deployment 
-      std::array<std::string, NUMBER_OF_DEPLOYABLES> LEOPDeploymentSequence;
+    void attemptDeployment(const std::string &deployableName);
 
-      void attemptDeployment(const std::string& deployableName);
+    void updateDeployableStatus(const std::string &deployableName,
+                                DeployableStatus status);
 
-      void updateDeployableStatus(const std::string& deployableName, DeployableStatus status);
+    void updateDeployableAttempts(const std::string &deployableName,
+                                  int numAttempts);
 
-      void updateDeployableAttempts(const std::string& deployableName, int numAttempts);
+    std::string getStatusString(DeployableStatus status);
 
-      std::string getStatusString(DeployableStatus status);
+    void printAllDeployablesStatus();
 
-      void printAllDeployablesStatus();
+    // ----------------------------------------------------------------------
+    // Handler implementations for user-defined typed input ports
+    // ----------------------------------------------------------------------
 
+    //! Handler implementation for deployableFeedbackSwitchPort
+    //!
+    void deployableFeedbackSwitchPort_handler(
+        const NATIVE_INT_TYPE portNum, /*!< The port number*/
+        const aString &a);
 
-      // ----------------------------------------------------------------------
-      // Handler implementations for user-defined typed input ports
-      // ----------------------------------------------------------------------
+    PRIVATE :
 
-      //! Handler implementation for deployableFeedbackSwitchPort
-      //!
-      void deployableFeedbackSwitchPort_handler(
-          const NATIVE_INT_TYPE portNum, /*!< The port number*/
-          const aString &a 
-      );
+        // ----------------------------------------------------------------------
+        // Command handler implementations
+        // ----------------------------------------------------------------------
 
-    PRIVATE:
-
-      // ----------------------------------------------------------------------
-      // Command handler implementations
-      // ----------------------------------------------------------------------
-
-      //! Implementation for ActivateDeploymentSequence command handler
-      //! 
-      void ActivateDeploymentSequence_cmdHandler(
-          const FwOpcodeType opCode, /*!< The opcode*/
-          const U32 cmdSeq /*!< The command sequence number*/
-      );
-
-
-    };
+        //! Implementation for ActivateDeploymentSequence command handler
+        //!
+        void
+        ActivateDeploymentSequence_cmdHandler(
+            const FwOpcodeType opCode, /*!< The opcode*/
+            const U32 cmdSeq           /*!< The command sequence number*/
+        );
+};
 
 } // end namespace Components
 

@@ -48,12 +48,12 @@ module Components {
 
         @ Log deployment sequence started 
         event deploymentSequenceStarted () \
-            severity activity low \
+            severity activity high \
             format "Deployment sequence started"
 
         @ Log deployment sequence ended
         event deploymentSequenceEnded() \
-            severity activity low \
+            severity activity high \
             format "Deployment sequence ended"
 
 
