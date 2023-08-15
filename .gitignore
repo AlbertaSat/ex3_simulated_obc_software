@@ -45,12 +45,17 @@ Gemfile.lock
 persistent/.bash_history 
 
 # For fprime lib 
-cubics-obc-test/fprime/**
+cubics-obc-test/fprime**
 
 # For Fprime project builds and auto generated code 
 cubics-obc-test/build**
 cubics-obc-test/venv/**
 
-# For individual component builds and auto generated code
+# For auto generated code
 cubics-obc-test/BurnwireTester/build**
 cubics-obc-test/BurnwireTester/logs/**
+
+cubics-obc-test/SimulationDeployment/build**
+cubics-obc-test/SimulationDeployment/logs/**
+
+
